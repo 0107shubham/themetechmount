@@ -40,16 +40,15 @@ const Review = () => {
   const visibleItem = CommentData[startIndex];
 
   return (
-    <div className="w-full relative">
+    <div className="w-full ">
       <div
-        className="absolute inset-0 bg-cover opacity-95"
+        className=" flex flex-col  w-full  items-center justify-center h-full text-white text-4xl font-bold"
         style={{
           backgroundImage:
             "url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')",
         }}
-      ></div>
-      <div className="relative flex flex-col  w-full z-10 items-center justify-center h-full text-white text-4xl font-bold">
-        <div className=" flex flex-row justify-center my-[2vw] ">
+      >
+        <div className=" flex flex-row justify-center   ">
           <div className=" w-[40%] ">
             <p className="text-[2vw] leading-tight">{visibleItem.comment}</p>
             <p className="text-[.7vw]  leading-normal">
@@ -59,18 +58,18 @@ const Review = () => {
           </div>
 
           <div className="w-[30%] flex flex-col  items-center ">
-            <div
+            <button
               onClick={handleScrollUp}
               className="my-[2vw] w-fit rounded-full border-[2px] border-white p-[.5vw] hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
             >
               <FaLongArrowAltUp className="text-[2vw]" />
-            </div>
-            <dic
+            </button>
+            <button
               onClick={handleScrollDown}
               className="my-[2vw]  w-fit rounded-full border-[2px] border-white p-[.5vw] hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
             >
               <FaArrowDownLong className="text-[2vw]" />
-            </dic>
+            </button>
           </div>
         </div>
 

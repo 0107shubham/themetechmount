@@ -14,25 +14,42 @@ import TeamDetails from "./components/TeamDetails";
 import Portfolio from "./components/Portfolio";
 import BlogClassic from "./components/BlogClassic";
 import BlogDetails from "./components/BlogDetails";
+import ContactUs from "./components/ContactUs";
+import Shop from "./components/Shop";
+import Search from "./components/Search";
+import Flowbite from "./components/Flowbite";
+import { NavbarToggle } from "flowbite-react";
+import { BiNavigation } from "react-icons/bi";
+import Navigation from "./components/Navigation";
+import Cart from "./components/Cart";
+import Checkout from "./components/Checkout";
 
 function App() {
   return (
     <>
-      <Home />
+      <Navigation />
+      {/* <Home /> */}
       {/* <Welcome />
-      <Events />
-      <Review />
-      <TicketBooking />
+      <Events /> */}
+      {/* <Review /> */}
+      {/* <TicketBooking />
       <Blogs />
-      <Instagram />
-      <Footer /> */}
+      <Instagram /> */}
+      {/* <Footer /> */}
       {/* <AboutUs /> */}
       {/* <Services /> */}
       {/* <ServiceDetails /> */}
       {/* <TeamDetails /> */}
-      <Portfolio />
+      {/* <Portfolio /> */}
       {/* <BlogClassic /> */}
       {/* <BlogDetails /> */}
+      {/* <ContactUs /> */}
+      {/* <Shop /> */}
+      {/* <Search /> */}
+      {/* <Flowbite /> */}
+
+      <Cart />
+      <Checkout />
     </>
   );
 }

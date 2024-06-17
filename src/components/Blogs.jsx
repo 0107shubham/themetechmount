@@ -1,39 +1,5 @@
 import React from "react";
-
-const BlogsData = [
-  {
-    id: 1,
-    Name: "Top 10 After Party Golden Rules",
-    description:
-      "There are many variations available, majorly have suffered alteration.",
-    imageUrl:
-      "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936055/event-image-001-780x590_dz5c8y.jpg",
-  },
-  {
-    id: 2,
-    Name: "How Your Events Can Make An Impact",
-    description:
-      "There are many variations available, majorly have suffered alteration.",
-    imageUrl:
-      "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936085/post-image-002-780x590_biw6qa.jpg",
-  },
-  {
-    id: 3,
-    Name: "How to Find the Perfect Event Venue",
-    description:
-      "There are many variations available, majorly have suffered alteration.",
-    imageUrl:
-      "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936091/post-image-004-780x590_ztbevs.jpg",
-  },
-  {
-    id: 4,
-    Name: "5 Steps To Planning a Sweet Party",
-    description:
-      "There are many variations available, majorly have suffered alteration.",
-    imageUrl:
-      "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936099/post-image-001-780x590_ebjk4n.jpg",
-  },
-];
+import { BlogsData } from "../Data";
 
 const Blogs = () => {
   return (
