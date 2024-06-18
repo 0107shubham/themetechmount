@@ -3,9 +3,13 @@ import { products } from "../Data";
 import { RxCross2 } from "react-icons/rx";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { IoMdArrowDropup } from "react-icons/io";
+import { useRecoilValue } from "recoil";
+import { cartState } from "../state/cartState";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const initialQuantities = products.slice(0, 2).map(() => 1);
+  const cart = useRecoilValue(cartState);
+  const initialQuantities = cart.map(() => 1);
   const [quantities, setQuantities] = useState(initialQuantities);
   console.log(quantities);
   const [totalPrice, setTotalPrice] = useState(0);
@@ -34,6 +38,7 @@ const Cart = () => {
   }, [quantities]);
 
   const cartProduct = products.slice(0, 2);
+  console.log(cart);
 
   return (
     <div className="p-6 bg-gray-100 min-h-screen w-full">
@@ -50,7 +55,7 @@ const Cart = () => {
             </tr>
           </thead>
           <tbody>
-            {cartProduct.map((product, index) => (
+            {cart.map((product, index) => (
               <tr key={product.id} className="border-t">
                 <td className="px-4 py-2">
                   <RxCross2 className="text-red-600 text-[2vw] cursor-pointer hover:bg-red-700 hover:text-white rounded-full" />
@@ -122,9 +127,9 @@ const Cart = () => {
             </div>
           </div>
           <div className="mt-[1vw] w-full">
-            <button className="bg-red-600 w-full py-[.5vw]">
+            <Link to="/checkout" className="bg-red-600 w-full py-[.5vw]">
               Proceed to Checkout
-            </button>
+            </Link>
           </div>
         </div>
       </div>

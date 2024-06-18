@@ -5,6 +5,9 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { Button, Drawer } from "flowbite-react";
 import { imagesGallery } from "../Data";
+import { Link } from "react-router-dom";
+import { cartState } from "../state/cartState";
+import { useRecoilValue } from "recoil";
 
 const platforms = [
   { id: 1, name: "Instagram" },
@@ -16,6 +19,9 @@ const platforms = [
 const Navigation = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const cartvalue = useRecoilValue(cartState);
+
+  const cartvalueLength = cartvalue.length;
 
   const handleClose = () => setIsOpen(false);
   console.log(imagesGallery);
@@ -47,16 +53,18 @@ const Navigation = () => {
 
         {/* Navigation Section */}
         <div
-          className={`absolute top-[10vw] mt-1 left-0 w-full bg-black text-white transition-all duration-300 ${
+          className={`absolute top-[10vw] z-50 mt-1 left-0 w-full bg-black text-white transition-all duration-300 ${
             isNavVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
           <nav className="p-4">
             <ul className="space-y-2 ">
               <li className="border-b-[1px]  border-gray-400 ">
-                <a href="#home" className="text-white hover:text-purple-500">
-                  Home
-                </a>
+                <Link to="/">
+                  <a href="#home" className="text-white hover:text-purple-500">
+                    Home
+                  </a>
+                </Link>
               </li>
               <li className="border-b-[1px]  border-gray-400 ">
                 <a href="#home" className="text-white hover:text-purple-500">
@@ -74,14 +82,23 @@ const Navigation = () => {
                 </a>
               </li>
               <li className="border-b-[1px]  border-gray-400 ">
-                <a href="#home" className="text-white hover:text-purple-500">
-                  Contact Us
-                </a>
+                <Link to="/contactUs">
+                  <a href="#home" className="text-white hover:text-purple-500">
+                    Contact Us
+                  </a>
+                </Link>
               </li>
               <li className="border-b-[1px]  border-gray-400 ">
-                <a href="#home" className="text-white hover:text-purple-500">
-                  Shop
-                </a>
+                <a
+                  href="#home"
+                  className="text-white hover:text-purple-500"
+                ></a>
+
+                <Link to="/shop">
+                  <a href="#home" className="text-white hover:text-purple-500">
+                    Shop
+                  </a>
+                </Link>
               </li>
             </ul>
           </nav>
@@ -90,51 +107,91 @@ const Navigation = () => {
 
       {/* Desktop view */}
 
-      <div className="text-white  flex-row justify-around items-center  bg-black w-full h-[10vw]  hidden lg:flex">
-        <div className="text-lg font-bold text-white">PRESENTUP</div>
+      <div className="text-white relative  flex-row justify-around items-center  bg-black w-full h-[8vw]  hidden lg:flex">
+        <div className="text-lg font-bold text-white">
+          <Link to="/">PRESENTUP</Link>
+        </div>
         <nav className="flex items-center">
-          <ul className="flex space-x-4">
-            <li className="border-r-[1px] border-gray-400 pr-2">
-              <a href="#home" className="text-white hover:text-purple-500">
+          <ul className="flex space-x-4 ">
+            <li className="    flex flex-col justify-center  h-[8vw] ">
+              <Link
+                to="/"
+                className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]"
+              >
                 Home
-              </a>
+              </Link>
             </li>
-            <li className="border-r-[1px] border-gray-400 pr-2">
-              <a href="#pages" className="text-white hover:text-purple-500">
+            <li className=" relative group flex flex-col justify-center  h-[8vw] ">
+              <Link className="text-white  hover:underline hover:text-purple-500  pl-[1.5vw]">
                 Pages
-              </a>
+              </Link>
+              <div className="bg-black absolute  z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
+                <p className="text-white  hover:underline text-[1.2vw] font-medium hover:text-purple-500 my-[.8vw]">
+                  <Link to="aboutUs">About Us</Link>{" "}
+                </p>
+
+                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                  <Link to="services">Services</Link>{" "}
+                </p>
+                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                  <Link to="serviceDetails">Services Details</Link>{" "}
+                </p>
+                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                  <Link to="teamDetails">Team Details</Link>{" "}
+                </p>
+              </div>
             </li>
-            <li className="border-r-[1px] border-gray-400 pr-2">
-              <a href="#portfolio" className="text-white hover:text-purple-500">
+            <li className="   relative group flex flex-col justify-center  h-[8vw]">
+              <p className="text-white cursor-pointer  hover:underline hover:text-purple-500 pl-[1.5vw]">
                 Portfolio
-              </a>
+              </p>
+              <div className="bg-black absolute left-0 z-40  top-full hidden group-hover:block w-[20vw] pl-[2vw]">
+                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500 my-[.5vw]">
+                  <Link to={`/portfolio/${1}`}>Project Details</Link>{" "}
+                </p>
+              </div>
             </li>
-            <li className="border-r-[1px] border-gray-400 pr-2">
-              <a href="#blog" className="text-white hover:text-purple-500">
+            <li className="  relative group flex flex-col justify-center h-[8vw]">
+              <p className="text-white cursor-pointer hover:underline hover:text-purple-500 pl-[1.5vw]">
                 Blog
-              </a>
+              </p>
+              <div className="bg-black absolute z-40 left-0 top-full hidden group-hover:block w-[20vw]  pl-[2vw]">
+                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500 my-[.5vw]">
+                  <Link to="blogClassic">Blogs Classic</Link>{" "}
+                </p>
+
+                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.5vw]">
+                  <Link to={`/blogs_details/${1}`}>Blogs Details</Link>{" "}
+                </p>
+              </div>
             </li>
-            <li className="border-r-[1px] border-gray-400 pr-2">
-              <a href="#contact" className="text-white hover:text-purple-500">
+            <li className="    flex flex-col justify-center  h-[8vw]  ">
+              <Link
+                to="contactUs"
+                className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]"
+              >
                 Contact Us
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#shop" className="text-white hover:text-purple-500">
-                Shop
-              </a>
+            <li className="     flex flex-col justify-center  h-[8vw]  ">
+              <Link className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]">
+                <Link to="/shop">Shop</Link>{" "}
+              </Link>
             </li>
           </ul>
         </nav>
+
+        {/* support */}
         <div className="flex items-center  mx-2">
           <div className="  border-r-2 border-gray-400">
             <p className="text-[1vw]">Support center</p>
             <p>+123 456 7890</p>
           </div>
           <div className="flex items-center ">
-            <div>
+            <Link to="cart">
               <IoCart size={24} />
-            </div>
+              <p>{cartvalueLength}</p>
+            </Link>
             <div>
               <IoIosSearch size={24} />
             </div>
@@ -151,7 +208,7 @@ const Navigation = () => {
               </Button>
             </div>
             <Drawer
-              className="h-full bg-black min-w-full space-x-0 ml-0"
+              className="h-full hidden  bg-black min-w-full space-x-0 ml-0"
               open={isOpen}
               onClose={handleClose}
               position="top"

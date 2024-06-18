@@ -1,33 +1,28 @@
 import React from "react";
 import { IoArrowForward } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 import { CiSearch } from "react-icons/ci";
+import { events } from "../Data";
+import { useParams } from "react-router-dom";
 
 const Portfolio = () => {
-  const variants = {
-    open: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        y: { stiffness: 1000, velocity: -100 },
-      },
-    },
-    closed: {
-      y: 50,
-      opacity: 0,
-      transition: {
-        y: { stiffness: 1000 },
-      },
-    },
-  };
+  const { id } = useParams();
+
+  const mainFiltredData = events.find((item) => item.id.toString() === id);
+
+  const filtredData = events.filter((item) => item.id.toString() !== id);
+  console.log("dt", filtredData);
+
   return (
     <div className="w-full">
       <div className="w-full">
         <div className="relative w-full py-[4vw] px-[7vw]">
           <div className="w-full">
+            <p>{mainFiltredData.title}</p>
             <img
-              src="https://res.cloudinary.com/drvjsegeb/image/upload/v1718170026/01_iwtfdq.jpg"
-              alt="prot1"
+              src={mainFiltredData.imageURL}
+              alt={mainFiltredData.title}
               className="h-[37vw] w-full"
             />
           </div>
@@ -164,23 +159,35 @@ const Portfolio = () => {
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-[1vw] ">
-              <div className="w-full bg-[#FFFFFF] drop-shadow-md">
-                <div className=" relative w-full sm:w-full aspect-square bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1718170031/03-720x604_1_hunvhi.jpg')] bg-cover overflow-hidden group">
-                  <div className="absolute top-0 left-0 w-full h-full bg-purple-300 transform -translate-y-full transition-transform duration-1000 ease-in-out group-hover:translate-y-0">
-                    <div className="ml-auto mr-auto mt-[38%] text-white hover:bg-white hover:text-purple-500  w-fit rounded-full border-white border-[.1vw] p-[.5vw]">
-                      <CiSearch className=" text-[2vw] " />
+              {filtredData.map((items) => (
+                <div
+                  key={items.id}
+                  className="w-full bg-[#FFFFFF] drop-shadow-md"
+                >
+                  <div
+                    // className={` relative w-full sm:w-full aspect-square bg-[url(${items.imageURL})] bg-cover overflow-hidden group`}
+                    className="relative w-full sm:w-full aspect-square bg-cover overflow-hidden group"
+                    style={{ backgroundImage: `url(${items.imageURL})` }}
+                  >
+                    <div className="absolute top-0 left-0 w-full h-full bg-purple-300 transform -translate-y-full transition-transform duration-1000 ease-in-out group-hover:translate-y-0">
+                      <div className="ml-auto mr-auto mt-[38%] text-white hover:bg-white hover:text-purple-500  w-fit rounded-full border-white border-[.1vw] p-[.5vw]">
+                        <CiSearch className=" text-[2vw] " />
+                      </div>
                     </div>
                   </div>
+                  <div className="flex flex-col items-center  py-[.5vw]">
+                    <Link
+                      to={`/portfolio/${items.id}`}
+                      className="text-black text-[1.2vw]"
+                    >
+                      {items.title}
+                    </Link>
+                    <p className="text-gray-400 text-[1vw]">private party</p>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center  py-[.5vw]">
-                  <p className="text-black text-[1.2vw]">
-                    MUTHALOVIN DANCE PARTY
-                  </p>
-                  <p className="text-gray-400 text-[1vw]">private party</p>
-                </div>
-              </div>
+              ))}
 
-              <div className="w-full bg-[#FFFFFF] drop-shadow-md">
+              {/* <div className="w-full bg-[#FFFFFF] drop-shadow-md">
                 <div className="relative w-full aspect-square bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1718170039/04-720x604_1_h0zviv.jpg')] bg-cover overflow-hidden group">
                   <div className="absolute top-0 left-0 w-full h-full bg-purple-300 transform -translate-y-full transition-transform duration-1000 ease-in-out group-hover:translate-y-0">
                     <div className="ml-auto mr-auto mt-[38%] text-white hover:bg-white hover:text-purple-500  w-fit rounded-full border-white border-[.1vw] p-[.5vw]">
@@ -194,8 +201,8 @@ const Portfolio = () => {
                   </p>
                   <p className="text-gray-400 text-[1vw]">private party</p>
                 </div>
-              </div>
-              <div>
+              </div> */}
+              {/* <div>
                 <div className="w-full bg-[#FFFFFF] drop-shadow-md">
                   <div className="relative w-full aspect-square bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1718170050/06-720x604_1_hqt43u.jpg')] bg-cover overflow-hidden group">
                     <div className="absolute top-0 left-0 w-full h-full bg-purple-300 transform -translate-y-full transition-transform duration-1000 ease-in-out group-hover:translate-y-0">
@@ -211,7 +218,7 @@ const Portfolio = () => {
                     <p className="text-gray-400 text-[1vw]">private party</p>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

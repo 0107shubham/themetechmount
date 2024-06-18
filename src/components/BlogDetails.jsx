@@ -1,18 +1,46 @@
 import React from "react";
 import { IoMdPerson } from "react-icons/io";
 import { GoComment } from "react-icons/go";
+import { useParams } from "react-router-dom";
+import { BlogsData } from "../Data";
 
 const BlogDetails = () => {
+  const { id } = useParams();
+
+  const filteredData = BlogsData.find((item) => item.id.toString() === id);
+
+  if (!filteredData) {
+    return <p>Blog post not found.</p>;
+  }
+
+  console.log(filteredData);
+
   return (
     <div className="w-full">
       <div className="w-full px-[21vw] py-[5vw] ">
         {/* Comment Section */}
         <div className="mb-8 bg-[#F5F5F5]">
-          <img
-            src="https://res.cloudinary.com/drvjsegeb/image/upload/v1718195257/post-image-001_wji9ea.jpg"
-            alt="party"
-            className="w-full aspect-video"
-          />
+          <p>{filteredData.Name}</p>
+          {filteredData.imageUrl && (
+            <img
+              src={filteredData.imageUrl}
+              alt="party"
+              className="w-full aspect-video"
+            />
+          )}
+
+          {filteredData.videoUrl && (
+            <div className="mt-[1vw]">
+              <iframe
+                className="w-full aspect-video"
+                src={filteredData.videoUrl.replace("watch?v=", "embed/")}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title={filteredData.title}
+              ></iframe>
+            </div>
+          )}
+
           <div className="w-full px-[3vw]">
             <div className="w-full flex items-center   my-[1vw]">
               <p className="text-[1.4vw] text-gray-600 w-full  flex items-center  px-[3vw]">

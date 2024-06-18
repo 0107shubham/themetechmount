@@ -93,7 +93,7 @@ const Checkout = () => {
                       <input
                         type="text"
                         name="firstName"
-                        className={`w-full p-[.3vw] bg-[#F7F7F7] border-[.1vw] ${
+                        className={`w-full text-[1.2vw] p-[.3vw] bg-[#F7F7F7] border-[.1vw] ${
                           errors.firstName
                             ? "border-red-500"
                             : "focus:border-yellow-400 border-gray-600"
@@ -110,7 +110,7 @@ const Checkout = () => {
                       <input
                         type="text"
                         name="lastName"
-                        className={`w-full p-[.3vw] bg-[#F7F7F7] border-[.1vw] ${
+                        className={`w-full p-[.3vw] text-[1.2vw]  bg-[#F7F7F7] border-[.1vw] ${
                           errors.lastName
                             ? "border-red-500"
                             : "focus:border-blue-500 border-gray-600"
@@ -128,7 +128,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="companyName"
-                      className="w-full  p-[.3vw] bg-[#F7F7F7]  border-[.1vw] border-green-600  focus:outline-none focus:border-yellow-500"
+                      className="w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border-[.1vw] border-green-600  focus:outline-none focus:border-yellow-500"
                       onChange={handleChange}
                       style={{ outline: "none" }}
                     />
@@ -139,7 +139,7 @@ const Checkout = () => {
                     </label>
                     <select
                       name="country"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
                         errors.country
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -171,7 +171,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="address"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  mb-[1vw] ${
+                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  mb-[1vw] ${
                         errors.address
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -184,7 +184,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="apartment"
-                      className="w-full  p-[.3vw] bg-[#F7F7F7]  border  focus:border-blue-500"
+                      className="w-full  p-[.3vw]  text-[1.2vw] bg-[#F7F7F7]  border  focus:border-blue-500"
                       placeholder="Apartment, suite, unit, etc. (optional)"
                       onChange={handleChange}
                       style={{ outline: "none" }}
@@ -197,7 +197,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="city"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
                         errors.city
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -213,7 +213,7 @@ const Checkout = () => {
                     </label>
                     <select
                       name="state"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]  text-[1.2vw] bg-[#F7F7F7]  border  ${
                         errors.state
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -245,7 +245,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="zipCode"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
                         errors.zipCode
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -262,7 +262,7 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="phone"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
                         errors.email
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -279,7 +279,7 @@ const Checkout = () => {
                     <input
                       type="email"
                       name="email"
-                      className={`w-full  p-[.3vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
                         errors.email
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -295,7 +295,7 @@ const Checkout = () => {
                     </label>
                     <textarea
                       name="notes"
-                      className="w-full  p-[.3vw] bg-[#F7F7F7]  border  focus:border-blue-500 border-gray-600"
+                      className="w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  focus:border-blue-500 border-gray-600"
                       placeholder="Notes about your order, e.g. special notes for delivery."
                       onChange={handleChange}
                       style={{ outline: "none" }}
@@ -310,7 +310,7 @@ const Checkout = () => {
                 <div className="">
                   <label
                     htmlFor="orderNotes"
-                    className="block text-[1vw] font-medium text-gray-700 my-[.5vw]"
+                    className="block text-[1vw] text-[1.2vw]  font-medium text-gray-700 my-[.5vw]"
                   >
                     Order notes (optional)
                   </label>

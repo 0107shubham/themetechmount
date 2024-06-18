@@ -169,7 +169,7 @@ export const products = [
 
 export const events = [
   {
-    id: "pp3",
+    id: 1,
     date: "March 14, 2024",
     day: "THU",
     time: "3:00 pm - 5:00 pm",
@@ -182,7 +182,7 @@ export const events = [
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1718364899/pp3_zdsrzj.jpg",
   },
   {
-    id: "pp1",
+    id: 2,
     date: "April 10, 2024",
     day: "WED",
     time: "8:00 am - 10:00 am",
@@ -195,7 +195,7 @@ export const events = [
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1718364904/pp1_1_jlva8l.jpg",
   },
   {
-    id: "pp2",
+    id: 3,
     date: "April 17, 2024",
     day: "WED",
     time: "10:00 am - 12:00 pm",
@@ -208,7 +208,7 @@ export const events = [
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1718364911/pp2_bd1p8h.jpg",
   },
   {
-    id: "pp4",
+    id: 4,
     date: "April 25, 2024",
     day: "WED",
     time: "12:30 pm - 2:30 pm",
@@ -231,6 +231,9 @@ export const BlogsData = [
     date: "October 13, 2018",
     imageUrl:
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936055/event-image-001-780x590_dz5c8y.jpg",
+    author: "John Doe",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
   },
   {
     id: 2,
@@ -240,6 +243,9 @@ export const BlogsData = [
     date: "October 13, 2018",
     imageUrl:
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936085/post-image-002-780x590_biw6qa.jpg",
+    author: "John Doe",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
   },
   {
     id: 3,
@@ -249,6 +255,9 @@ export const BlogsData = [
     date: "October 18, 2018",
     imageUrl:
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936091/post-image-004-780x590_ztbevs.jpg",
+    author: "John Doe",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
   },
   {
     id: 4,
@@ -258,6 +267,30 @@ export const BlogsData = [
     date: "October 19, 2018",
     imageUrl:
       "https://res.cloudinary.com/drvjsegeb/image/upload/v1717936099/post-image-001-780x590_ebjk4n.jpg",
+    author: "John Doe",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
+  },
+  {
+    id: 5,
+    title: "UNUSUAL GIFTS FOR BIRTHDAYS",
+    author: "John Doe",
+    date: "October 13, 2018",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
+    imageUrl:
+      "https://res.cloudinary.com/drvjsegeb/image/upload/v1718195281/gallery-image-002_vxz8c1.jpg",
+  },
+  {
+    id: 6,
+    title: "10 WAYS TO SAVE $1000 ON A WEDDING",
+    author: "John Doe",
+    date: "September 12, 2018",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
+    videoUrl: "https://www.youtube.com/watch?v=0r4RBVX1XnY",
+    summary:
+      "The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections de Finibus Bonorum et Malorum” by Cicero are also reproduced accompanied by English versions from the 1914 translation by H. Raby.",
   },
 ];
 

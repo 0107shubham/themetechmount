@@ -1,6 +1,8 @@
 import React from "react";
 import { IoMdPerson } from "react-icons/io";
 import { GoComment } from "react-icons/go";
+import { Link } from "react-router-dom";
+import { BlogsData } from "../Data";
 
 const articles = [
   {
@@ -68,7 +70,7 @@ const BlogClassic = () => {
   return (
     <div className="">
       <div className="w-full px-[4vw] sm:px-[18vw]">
-        {articles.map((article) => (
+        {BlogsData.map((article) => (
           <div key={article.id} className="mb-[1vw]   ">
             {article.imageUrl && (
               <img
@@ -104,7 +106,9 @@ const BlogClassic = () => {
             </p>
             <button className="border-[.1vw] flex items-center px-[1vw] py-[.5vw] bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] hover:bg-gradient-to-l ">
               <a href="#" className="text-black text-[1.2vw] font-semibold">
-                continue reading
+                <Link to={`/blogs_details/${article.id}`}>
+                  continue reading
+                </Link>{" "}
               </a>
             </button>
           </div>

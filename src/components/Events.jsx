@@ -60,7 +60,7 @@ const Events = () => {
       {events.map((item) => (
         <div
           key={item.id}
-          className={` rounded-lg bg-white hover:bg-[url(${item.imgUrl})] shadow-md mb-4 relative flex w-full h-[10vw]`}
+          className={` rounded-lg bg-white hover:bg-[url(${item.imageURL})] shadow-md mb-4 relative flex w-full h-[10vw]`}
         >
           <div className="w-[5vw] flex-shrink-0 relative  pt-[3vw] sm:pt-[3.5vw]  bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]  items-center">
             <p className="text-gray-800 absolute right-auto left-auto  whitespace-nowrap transform -rotate-90 text-[1.8vw]  font-semibold md:font-bold">
@@ -68,10 +68,25 @@ const Events = () => {
             </p>
           </div>
 
-          <div className="flex  font-medium justify-around items-center w-full min-h-[100%]  text-[2vw] hover:bg-[${item.imgUrl}]">
+          <div
+            // className={`flex  font-medium justify-around items-center w-full min-h-[100%]  text-[2vw] hover:bg-[${item.imgUrl}]`}
+            key={item.id}
+            className="flex font-medium justify-around items-center w-full min-h-[100%] text-[2vw] group"
+            style={{
+              backgroundColor: "white",
+              transition: "background-image 0.3s ease-in-out",
+            }}
+            onMouseEnter={(e) =>
+              (e.currentTarget.style.backgroundImage = `url(${item.imgUrl})`)
+            }
+            onMouseLeave={(e) =>
+              (e.currentTarget.style.backgroundImage = "none")
+            }
+          >
             <p className="text-gray-800 bg-purple-200   pr-[2vw]">
               {item.time}
             </p>
+            <img src={item.imageURL} className="w-[4vw]" />
             <div className="border-[.1vw] h-[80%] border-black"></div>
             <p className="text-gray-800   pr-[2vw]">{item.title}</p>
             <div className="border-[.1vw]  h-[80%] border-black"></div>
