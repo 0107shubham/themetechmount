@@ -64,7 +64,7 @@ const ReviewComment = () => {
   };
 
   return (
-    <div className="w-full h-[30vw]  grid grid-cols-5">
+    <div className="w-full h-[50vw] sm:h-[30vw]  grid grid-cols-5">
       <div className="relative col-span-4 h-full overflow-hidden rounded-lg ">
         {CommentData.map((item, index) => (
           <div
@@ -79,7 +79,7 @@ const ReviewComment = () => {
             }}
           >
             <div className="h-full w-[90%]    relative flex items-center justify-end">
-              <div className="absolute left-[20%] top-[12%] w-[12vw] h-[12vw] p-[2vw] flex items-center justify-center border  border-gray-700 rounded-full ">
+              <div className="absolute  left-[15%] top-[7%]  sm:left-[20%] sm:top-[12%]  w-[15vw] h-[15vw] sm:w-[12vw] sm:h-[12vw] sm:p-[2vw] flex items-center justify-center border  border-gray-700 rounded-full ">
                 <img
                   src="https://res.cloudinary.com/drvjsegeb/image/upload/v1719067841/double_vzfra7.png"
                   alt="double"
@@ -87,13 +87,13 @@ const ReviewComment = () => {
                 />
               </div>
               <div className="z-10 w-[70%] px-[2vw]  ">
-                <p className="text-[2vw] font-mono leading-tight">
+                <p className="text-base  text-[4vw] sm:text-[2vw] font-mono leading-tight">
                   {item.comment}
                 </p>
-                <p className="text-[0.9vw] uppercase  my-[.5vw]  text-gray-400 leading-normal">
+                <p className=" text-[1.5vw]  sm:text-[0.9vw] uppercase  my-[.5vw]  text-gray-400 leading-normal">
                   {item.position}
                 </p>
-                <p className="text-[1.5vw] uppercase my-[.5vw] font-mono leading-normal">
+                <p className="text-[3vw] sm:text-[1.5vw] uppercase my-[.5vw] font-mono leading-normal">
                   {item.author}
                 </p>
               </div>
@@ -104,15 +104,15 @@ const ReviewComment = () => {
       <div className="w-full grid-span-1   flex flex-col justify-center items-start   right-4">
         <button
           onClick={handleTop}
-          className="my-2 w-fit rounded-full border-[2px] border-white p-[.5vw] hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
+          className="my-[2vw] w-fit rounded-full border-[2px] border-white p-[1vw] sm:p-[.5vw] hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
         >
-          <FaLongArrowAltUp className="text-[2vw]" />
+          <FaLongArrowAltUp className="text-[4vw] sm:text-[2vw]" />
         </button>
         <button
           onClick={handleBottom}
-          className="my-2 w-fit rounded-full border-[2px] border-white p-[.5vw] hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
+          className="my-[2vw] w-fit rounded-full border-[2px] border-white p-[1vw] sm:p-[.5vw] hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
         >
-          <FaArrowDown className="text-[2vw]" />
+          <FaArrowDown className=" text-[4vw] sm:text-[2vw]" />
         </button>
       </div>
     </div>

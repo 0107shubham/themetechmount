@@ -49,7 +49,7 @@ const Instagram = () => {
               <img
                 src={image.imageUrl}
                 alt={`Instagram ${image.id}`}
-                className="w-full h-[18vw] transform transition-transform duration-300 hover:scale-105"
+                className="w-full  h-[32vw]   md:h-[18vw] transform transition-transform duration-300 hover:scale-105"
               />
             </a>
           </div>

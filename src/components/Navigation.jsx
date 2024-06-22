@@ -18,6 +18,10 @@ const platforms = [
 
 const Navigation = () => {
   const [isNavVisible, setIsNavVisible] = useState(false);
+  const [isPagesVisible, setIsPagesVisible] = useState(false);
+
+  const [isPortfolioVisible, setIsPortfolioVisible] = useState(false);
+  const [isBlogVisible, setIsBlogVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const cartvalue = useRecoilValue(cartState);
 
@@ -75,10 +79,12 @@ const Navigation = () => {
   return (
     <div onClick={handleButtonClick} className="w-full">
       <div className="text-white flex justify-between items-center  w-full h-[10vw] relative lg:hidden">
-        <div className="text-lg font-bold">PRESENTUP</div>
+        <div className="text-lg font-bold">
+          <Link to="/">PRESENTUP</Link>
+        </div>
         <div className="flex items-center space-x-4">
           <div>
-            <IoCart size={24} />
+            <IoCart size={24} onClick={handleCart} />
           </div>
           <div>
             <IoIosSearch size={24} />
@@ -97,48 +103,129 @@ const Navigation = () => {
 
         {/* Navigation Section */}
         <div
-          className={`absolute top-[10vw] z-50 mt-1 left-0 w-full  text-white transition-all duration-300 ${
+          className={`absolute top-[10vw] z-50 mt-1 left-0 w-full bg-black  text-white transition-all duration-300 ${
             isNavVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
           <nav className="p-4">
-            <ul className="space-y-2 ">
-              <li className="border-b-[1px]  border-gray-400 ">
+            <ul className="space-y-8 ">
+              <li className="border-b-[1px] text-lg my-[2vw] border-gray-400 ">
                 <Link to="/">
-                  <a href="#home" className="text-white hover:text-purple-500">
-                    Home
-                  </a>
+                  <p className="text-white hover:text-purple-500">Home</p>
                 </Link>
               </li>
-              <li className="border-b-[1px]  border-gray-400 ">
-                <a href="#home" className="text-white hover:text-purple-500">
+              <li className="border-b-[1px]  my-[2vw] border-gray-400">
+                <p
+                  onClick={() => setIsPagesVisible(!isPagesVisible)}
+                  className="text-white text-lg cursor-pointer hover:text-purple-500"
+                >
                   Pages
-                </a>
+                </p>
+                {isPagesVisible && (
+                  <div className="bg-black space-y-6 z-40 divide-y text-lg  w-full pl-[2vw]">
+                    <div
+                      onClick={() => handleNavigation("/aboutUs")}
+                      className="text-white hover:underline whitespace-nowrap w-full  font-medium hover:text-purple-500 my-[.8vw]"
+                    >
+                      About Us
+                    </div>
+                    <div
+                      onClick={() => handleNavigation("/services")}
+                      className="text-white text-lg w-full  font-medium hover:text-purple-500 my-[.8vw]"
+                    >
+                      Services
+                    </div>
+                    <div
+                      onClick={() => handleNavigation("/serviceDetails")}
+                      className="text-white  w-full whitespace-nowrap font-medium hover:text-purple-500 my-[.8vw]"
+                    >
+                      Services Details
+                    </div>
+                    <div
+                      onClick={() => handleNavigation("/teamDetails")}
+                      className="text-white  w-full whitespace-normal  font-medium hover:text-purple-500 my-[.8vw]"
+                    >
+                      Team Details
+                    </div>
+                  </div>
+                )}
               </li>
-              <li className="border-b-[1px]  border-gray-400 ">
-                <a href="#home" className="text-white hover:text-purple-500">
+              {/* <li className="border-b-[1px]  border-gray-400 ">
+                <p className="text-white group hover:text-purple-500">Pages</p>
+                <div className="bg-black absolute  cursor-pointer   z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
+                  <div className="text-white  hover:underline text-[1.2vw] font-medium hover:text-purple-500 my-[.8vw]">
+                    <p onClick={handleAbout}>About Us</p>{" "}
+                  </div>
+
+                  <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                    <p onClick={handleService}>Services</p>{" "}
+                  </div>
+                  <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                    <p onClick={handleServiceDetail}>Services Details</p>{" "}
+                  </div>
+                  <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                    <p onClick={handleteamDetails}>Team Details</p>{" "}
+                  </div>
+                </div>
+              </li> */}
+              <li className="border-b-[1px]  text-lg border-gray-400">
+                <p
+                  onClick={() => setIsPortfolioVisible(!isPortfolioVisible)}
+                  className="text-white cursor-pointer hover:text-purple-500"
+                >
                   Portfolio
-                </a>
+                </p>
+                {isPortfolioVisible && (
+                  <div
+                    onClick={() => handleNavigation("/portfolio/1")}
+                    className="bg-black  top-full w-[20vw] pl-[2vw]"
+                  >
+                    <div className="text-white whitespace-nowrap cursor-pointer font-medium hover:text-purple-500 my-[.5vw]">
+                      Project Details
+                    </div>
+                  </div>
+                )}
               </li>
-              <li className="border-b-[1px]  border-gray-400 ">
-                <a href="#home" className="text-white hover:text-purple-500">
+              <li className="border-b-[1px] text-lg border-gray-400">
+                <p
+                  onClick={() => setIsBlogVisible(!isBlogVisible)}
+                  className="text-white cursor-pointer hover:text-purple-500"
+                >
                   Blog
-                </a>
+                </p>
+                {isBlogVisible && (
+                  <div className="bg-black divide-y  w-full pl-[2vw]">
+                    <div
+                      onClick={() => handleNavigation("/blogClassic")}
+                      className="text-white  font-medium hover:text-purple-500 my-[.5vw]"
+                    >
+                      Blogs Classic
+                    </div>
+                    <div
+                      onClick={() => handleNavigation("/blogs_details/1")}
+                      className="text-white font-medium hover:text-purple-500 my-[.5vw]"
+                    >
+                      Blogs Details
+                    </div>
+                  </div>
+                )}
               </li>
               <li className="border-b-[1px]  border-gray-400 ">
                 <div onClick={handleContactUs}>
-                  <p className="text-white hover:text-purple-500">Contact Us</p>
+                  <p className="text-white text-lg hover:text-purple-500">
+                    Contact Us
+                  </p>
                 </div>
               </li>
-              <li className="border-b-[1px]  border-gray-400 ">
-                <a
-                  href="#home"
-                  className="text-white hover:text-purple-500"
-                ></a>
-
-                <Link to="/shop">
-                  <p className="text-white hover:text-purple-500">Shop</p>
-                </Link>
+              <li
+                onClick={handlePortfolioDetails}
+                className="border-b-[1px]  border-gray-400 "
+              >
+                <div onClick={handleContactUs}>
+                  <p className="text-white text-lg hover:text-purple-500">
+                    Shop
+                  </p>
+                </div>
               </li>
             </ul>
           </nav>
@@ -162,9 +249,9 @@ const Navigation = () => {
               </Link>
             </li>
             <li className=" relative group flex flex-col justify-center  h-[8vw] ">
-              <Link className="text-white  hover:underline hover:text-purple-500  pl-[1.5vw]">
+              <p className="text-white  hover:underline hover:text-purple-500  pl-[1.5vw]">
                 Pages
-              </Link>
+              </p>
               <div className="bg-black absolute  cursor-pointer   z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
                 <div className="text-white  hover:underline text-[1.2vw] font-medium hover:text-purple-500 my-[.8vw]">
                   <p onClick={handleAbout}>About Us</p>{" "}
