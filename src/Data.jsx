@@ -209,7 +209,7 @@ export const events = [
   },
   {
     id: 4,
-    date: "April 25, 2024",
+    date: "December 25, 2024",
     day: "WED",
     time: "12:30 pm - 2:30 pm",
     title: "Music Festival",

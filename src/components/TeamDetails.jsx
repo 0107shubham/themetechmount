@@ -9,6 +9,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FaPinterestP } from "react-icons/fa6";
 import { FaDribbble } from "react-icons/fa";
 import { FaAngleDoubleRight } from "react-icons/fa";
+import Navigation from "./Navigation";
 
 const statements = [
   "Experienced Attorneys Professional.",
@@ -52,6 +53,9 @@ const cardData = [
 const TeamDetails = () => {
   return (
     <div className="w-full">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="w-full py-[4vw] px-[6vw]">
         <div className="w-full grid grid-cols-2 gap-[2vw] bg-gray-100 p-[4vw] ">
           <div className="w-full">

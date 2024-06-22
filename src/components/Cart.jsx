@@ -6,6 +6,7 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { useRecoilValue } from "recoil";
 import { cartState } from "../state/cartState";
 import { Link } from "react-router-dom";
+import Navigation from "./Navigation";
 
 const Cart = () => {
   const cart = useRecoilValue(cartState);
@@ -41,95 +42,101 @@ const Cart = () => {
   console.log(cart);
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen w-full">
-      <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
-        <table className="table-auto w-full">
-          <thead>
-            <tr>
-              <th className="px-4 py-2 text-left"></th>
-              <th className="px-4 py-2 text-left"></th>
-              <th className="px-4 py-2 text-left">Product</th>
-              <th className="px-4 py-2 text-left">Price</th>
-              <th className="px-4 py-2 text-left">Quantity</th>
-              <th className="px-4 py-2 text-left">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            {cart.map((product, index) => (
-              <tr key={product.id} className="border-t">
-                <td className="px-4 py-2">
-                  <RxCross2 className="text-red-600 text-[2vw] cursor-pointer hover:bg-red-700 hover:text-white rounded-full" />
-                </td>
-                <td className="px-4 py-2">
-                  <img
-                    src={product.imageUrl}
-                    alt={product.name}
-                    className="w-[2vw] h-[2vw] rounded-md"
-                  />
-                </td>
-                <td className="px-4 py-2">
-                  <div className="font-normal text-[1vw] text-purple-500 hover:text-black">
-                    {product.name}
-                  </div>
-                  {product.saleOffer > 0 && (
-                    <p className=" font-normal text-[1vw] text-black">
-                      {/* Sale: {product.saleOffer}% off */}
-                    </p>
-                  )}
-                </td>
-                <td className="px-4 py-2">
-                  {product.saleOffer > 0 ? (
-                    <div className="text-black text-[1vw]">
-                      {/* <span className="line-through text-gray-600">
+    <div>
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
+
+      <div className="p-6 bg-gray-100 min-h-screen w-full">
+        <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
+          <table className="table-auto w-full">
+            <thead>
+              <tr>
+                <th className="px-4 py-2 text-left"></th>
+                <th className="px-4 py-2 text-left"></th>
+                <th className="px-4 py-2 text-left">Product</th>
+                <th className="px-4 py-2 text-left">Price</th>
+                <th className="px-4 py-2 text-left">Quantity</th>
+                <th className="px-4 py-2 text-left">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((product, index) => (
+                <tr key={product.id} className="border-t">
+                  <td className="px-4 py-2">
+                    <RxCross2 className="text-red-600 text-[2vw] cursor-pointer hover:bg-red-700 hover:text-white rounded-full" />
+                  </td>
+                  <td className="px-4 py-2">
+                    <img
+                      src={product.imageUrl}
+                      alt={product.name}
+                      className="w-[2vw] h-[2vw] rounded-md"
+                    />
+                  </td>
+                  <td className="px-4 py-2">
+                    <div className="font-normal text-[1vw] text-purple-500 hover:text-black">
+                      {product.name}
+                    </div>
+                    {product.saleOffer > 0 && (
+                      <p className=" font-normal text-[1vw] text-black">
+                        {/* Sale: {product.saleOffer}% off */}
+                      </p>
+                    )}
+                  </td>
+                  <td className="px-4 py-2">
+                    {product.saleOffer > 0 ? (
+                      <div className="text-black text-[1vw]">
+                        {/* <span className="line-through text-gray-600">
                         ${product.price.toFixed(2)}
                       </span> */}
-                      <span className="text-black text-[1.2vw] ml-2">
-                        ${product.priceAfterSale}
+                        <span className="text-black text-[1.2vw] ml-2">
+                          ${product.priceAfterSale}
+                        </span>
+                      </div>
+                    ) : (
+                      <span className="text-black text-[1.2vw]">
+                        ${product.price}
                       </span>
-                    </div>
-                  ) : (
-                    <span className="text-black text-[1.2vw]">
-                      ${product.price}
+                    )}
+                  </td>
+                  <td className="px-[1vw] w-[5vw] mt-[.5vw] h-[3vw] text-black flex border-[.1vw] border-gray-600 group text-[1.2vw]">
+                    {quantities[index]}
+                    <span className="flex flex-col ">
+                      <IoMdArrowDropup
+                        onClick={() => handleQuantityIncrease(index)}
+                        className="hidden group-hover:block hover:bg-gray-300 active:bg-gray-600 ml-[.5vw]"
+                      />
+                      <IoMdArrowDropdown
+                        onClick={() => handleQuantityDecrease(index)}
+                        className="hidden group-hover:block hover:bg-gray-300 active:bg-gray-600 ml-[.5vw]"
+                      />
                     </span>
-                  )}
-                </td>
-                <td className="px-[1vw] w-[5vw] mt-[.5vw] h-[3vw] text-black flex border-[.1vw] border-gray-600 group text-[1.2vw]">
-                  {quantities[index]}
-                  <span className="flex flex-col ">
-                    <IoMdArrowDropup
-                      onClick={() => handleQuantityIncrease(index)}
-                      className="hidden group-hover:block hover:bg-gray-300 active:bg-gray-600 ml-[.5vw]"
-                    />
-                    <IoMdArrowDropdown
-                      onClick={() => handleQuantityDecrease(index)}
-                      className="hidden group-hover:block hover:bg-gray-300 active:bg-gray-600 ml-[.5vw]"
-                    />
-                  </span>
-                </td>
-                <td className="px-4 py-2 text-black text-[1.2vw]">
-                  ${(product.priceAfterSale * quantities[index]).toFixed(2)}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-      <div className="w-full h-[25vw] flex justify-end">
-        <div className="w-[49%]">
-          <p className="my-[1vw]">Cart totals</p>
-          <div className="divide-y w-full h-[10vw] flex flex-col justify-center shadow-md bg-white px-[1vw]">
-            <div>
-              <p>Subtotal: ${totalPrice.toFixed(2)}</p>
+                  </td>
+                  <td className="px-4 py-2 text-black text-[1.2vw]">
+                    ${(product.priceAfterSale * quantities[index]).toFixed(2)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="w-full h-[25vw] flex justify-end">
+          <div className="w-[49%]">
+            <p className="my-[1vw]">Cart totals</p>
+            <div className="divide-y w-full h-[10vw] flex flex-col justify-center shadow-md bg-white px-[1vw]">
+              <div>
+                <p>Subtotal: ${totalPrice.toFixed(2)}</p>
+              </div>
+              <div className="w-full h-[.05vw] bg-gray-400"></div>
+              <div>
+                <p>Total: ${totalPrice.toFixed(2)}</p>
+              </div>
             </div>
-            <div className="w-full h-[.05vw] bg-gray-400"></div>
-            <div>
-              <p>Total: ${totalPrice.toFixed(2)}</p>
+            <div className="mt-[1vw] w-full">
+              <Link to="/checkout" className="bg-red-600 w-full py-[.5vw]">
+                Proceed to Checkout
+              </Link>
             </div>
-          </div>
-          <div className="mt-[1vw] w-full">
-            <Link to="/checkout" className="bg-red-600 w-full py-[.5vw]">
-              Proceed to Checkout
-            </Link>
           </div>
         </div>
       </div>

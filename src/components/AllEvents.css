@@ -1,0 +1,26 @@
+/* CustomStyles.css */
+
+/* Remove the default blue focus outline for the input */
+input[type="search"] {
+  outline: none;
+}
+
+input[type="search"]:focus {
+  outline: none;
+  box-shadow: none;
+  border: none;
+}
+
+/* Remove the default blue focus outline for buttons */
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Customize button focus styles if needed */
+button:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Handle specific button focus border */

@@ -16,21 +16,21 @@ const Blogs = () => {
           specimen bookorem.
         </p>
       </div>
-      <ul className="w-full  flex flex-wrap text-white">
+      <ul className="w-full  grid grid-cols-1 sm:grid-cols-2  text-white gap-[1vw]">
         {requiredBlogsData.map((blog) => (
-          <li className="w-[50%]  flex py-[2vw]" key={blog.id}>
+          <li className="w-full  flex py-[2vw]" key={blog.id}>
             <Link to={`/blogs_details/${blog.id}`}>
               <div className="  flex py-[2vw]">
                 <img
-                  className="w-[25vw] h-[9vw]"
+                  className="w-[25vw] h-[18vw] sm:h-[9vw]"
                   src={blog.imageUrl}
                   alt={blog.name}
                 />
                 <div className="pl-[2vw] pt-[.5vw] ">
-                  <h2 className="font-sans text-[1.6vw] font-semibold uppercase hover:text-purple-700">
+                  <h2 className="font-sans text-[3vw] sm:text-[1.6vw] font-semibold uppercase hover:text-purple-700">
                     {blog.Name}
                   </h2>
-                  <p className="font-sans text-[1.2vw] text-gray-400 ">
+                  <p className="font-sans text-[2.5vw] sm:text-[1.2vw] text-gray-400 ">
                     {blog.description}
                   </p>
                 </div>

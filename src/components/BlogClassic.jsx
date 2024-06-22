@@ -3,6 +3,7 @@ import { IoMdPerson } from "react-icons/io";
 import { GoComment } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { BlogsData } from "../Data";
+import Navigation from "./Navigation";
 
 const articles = [
   {
@@ -69,6 +70,9 @@ const articles = [
 const BlogClassic = () => {
   return (
     <div className="">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="w-full px-[4vw] sm:px-[18vw]">
         {BlogsData.map((article) => (
           <div key={article.id} className="mb-[1vw]   ">

@@ -5,7 +5,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import { Button, Drawer } from "flowbite-react";
 import { imagesGallery } from "../Data";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { cartState } from "../state/cartState";
 import { useRecoilValue } from "recoil";
 
@@ -28,9 +28,53 @@ const Navigation = () => {
 
   let requiredImage = imagesGallery.slice(0, 3);
 
+  const handleButtonClick = (e) => {
+    e.stopPropagation(); // Stop the event from bubbling up to the link
+    e.preventDefault(); // Prevent the default link action
+    console.log("Button inside link clicked");
+    // Perform any other action here
+  };
+
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/cart");
+  };
+
+  const handleCart = () => {
+    navigate("/cart");
+  };
+  const handleContactUs = () => {
+    navigate("/contactUs");
+  };
+  const handleBlogClassic = () => {
+    navigate("/blogClassic");
+  };
+  const handleBlogDetails = () => {
+    navigate("/blogs_details/1");
+  };
+  const handlePortfolioDetails = () => {
+    navigate("/portfolio/1");
+  };
+  const handleAbout = () => {
+    navigate("/aboutUs");
+  };
+  const handleService = () => {
+    navigate("/services");
+  };
+  const handleServiceDetail = () => {
+    navigate("/serviceDetails");
+  };
+  const handleteamDetails = () => {
+    navigate("/teamDetails");
+  };
+  const handleShop = () => {
+    navigate("/shop");
+  };
+
   return (
-    <div className="w-full">
-      <div className="text-white flex justify-between items-center bg-black w-full h-[10vw] relative lg:hidden">
+    <div onClick={handleButtonClick} className="w-full">
+      <div className="text-white flex justify-between items-center  w-full h-[10vw] relative lg:hidden">
         <div className="text-lg font-bold">PRESENTUP</div>
         <div className="flex items-center space-x-4">
           <div>
@@ -53,7 +97,7 @@ const Navigation = () => {
 
         {/* Navigation Section */}
         <div
-          className={`absolute top-[10vw] z-50 mt-1 left-0 w-full bg-black text-white transition-all duration-300 ${
+          className={`absolute top-[10vw] z-50 mt-1 left-0 w-full  text-white transition-all duration-300 ${
             isNavVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
@@ -82,11 +126,9 @@ const Navigation = () => {
                 </a>
               </li>
               <li className="border-b-[1px]  border-gray-400 ">
-                <Link to="/contactUs">
-                  <a href="#home" className="text-white hover:text-purple-500">
-                    Contact Us
-                  </a>
-                </Link>
+                <div onClick={handleContactUs}>
+                  <p className="text-white hover:text-purple-500">Contact Us</p>
+                </div>
               </li>
               <li className="border-b-[1px]  border-gray-400 ">
                 <a
@@ -95,9 +137,7 @@ const Navigation = () => {
                 ></a>
 
                 <Link to="/shop">
-                  <a href="#home" className="text-white hover:text-purple-500">
-                    Shop
-                  </a>
+                  <p className="text-white hover:text-purple-500">Shop</p>
                 </Link>
               </li>
             </ul>
@@ -107,7 +147,7 @@ const Navigation = () => {
 
       {/* Desktop view */}
 
-      <div className="text-white relative  flex-row justify-around items-center  bg-black w-full h-[8vw]  hidden lg:flex">
+      <div className="text-white relative  flex-row justify-around items-center   w-full h-[8vw]  hidden lg:flex">
         <div className="text-lg font-bold text-white">
           <Link to="/">PRESENTUP</Link>
         </div>
@@ -125,20 +165,20 @@ const Navigation = () => {
               <Link className="text-white  hover:underline hover:text-purple-500  pl-[1.5vw]">
                 Pages
               </Link>
-              <div className="bg-black absolute  z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
-                <p className="text-white  hover:underline text-[1.2vw] font-medium hover:text-purple-500 my-[.8vw]">
-                  <Link to="aboutUs">About Us</Link>{" "}
-                </p>
+              <div className="bg-black absolute  cursor-pointer   z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
+                <div className="text-white  hover:underline text-[1.2vw] font-medium hover:text-purple-500 my-[.8vw]">
+                  <p onClick={handleAbout}>About Us</p>{" "}
+                </div>
 
-                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
-                  <Link to="services">Services</Link>{" "}
-                </p>
-                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
-                  <Link to="serviceDetails">Services Details</Link>{" "}
-                </p>
-                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
-                  <Link to="teamDetails">Team Details</Link>{" "}
-                </p>
+                <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                  <p onClick={handleService}>Services</p>{" "}
+                </div>
+                <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                  <p onClick={handleServiceDetail}>Services Details</p>{" "}
+                </div>
+                <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.8vw]">
+                  <p onClick={handleteamDetails}>Team Details</p>{" "}
+                </div>
               </div>
             </li>
             <li className="   relative group flex flex-col justify-center  h-[8vw]">
@@ -146,38 +186,38 @@ const Navigation = () => {
                 Portfolio
               </p>
               <div className="bg-black absolute left-0 z-40  top-full hidden group-hover:block w-[20vw] pl-[2vw]">
-                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500 my-[.5vw]">
-                  <Link to={`/portfolio/${1}`}>Project Details</Link>{" "}
-                </p>
+                <div className="text-white text-[1.2vw]  cursor-pointer  font-medium hover:text-purple-500 my-[.5vw]">
+                  <p onClick={handlePortfolioDetails}>Project Details</p>{" "}
+                </div>
               </div>
             </li>
             <li className="  relative group flex flex-col justify-center h-[8vw]">
               <p className="text-white cursor-pointer hover:underline hover:text-purple-500 pl-[1.5vw]">
                 Blog
               </p>
-              <div className="bg-black absolute z-40 left-0 top-full hidden group-hover:block w-[20vw]  pl-[2vw]">
-                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500 my-[.5vw]">
-                  <Link to="blogClassic">Blogs Classic</Link>{" "}
-                </p>
+              <div className="bg-black absolute cursor-pointer z-40 left-0 top-full hidden group-hover:block w-[20vw]  pl-[2vw]">
+                <div className="text-white text-[1.2vw]  font-medium hover:text-purple-500 my-[.5vw]">
+                  <p onClick={handleBlogClassic}>Blogs Classic</p>{" "}
+                </div>
 
-                <p className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.5vw]">
-                  <Link to={`/blogs_details/${1}`}>Blogs Details</Link>{" "}
-                </p>
+                <div className="text-white text-[1.2vw] font-medium hover:text-purple-500  my-[.5vw]">
+                  <p onClick={handleBlogDetails}>Blogs Details</p>{" "}
+                </div>
               </div>
             </li>
-            <li className="    flex flex-col justify-center  h-[8vw]  ">
-              <Link
-                to="contactUs"
+            <div className="  cursor-pointer    flex flex-col justify-center  h-[8vw]  ">
+              <p
+                onClick={handleContactUs}
                 className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]"
               >
                 Contact Us
-              </Link>
-            </li>
-            <li className="     flex flex-col justify-center  h-[8vw]  ">
-              <Link className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]">
-                <Link to="/shop">Shop</Link>{" "}
-              </Link>
-            </li>
+              </p>
+            </div>
+            <div className="  cursor-pointer   cursor-pointer     flex flex-col justify-center  h-[8vw]  ">
+              <div className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]">
+                <p onClick={handleShop}>Shop</p>{" "}
+              </div>
+            </div>
           </ul>
         </nav>
 
@@ -188,10 +228,10 @@ const Navigation = () => {
             <p>+123 456 7890</p>
           </div>
           <div className="flex items-center ">
-            <Link to="cart">
+            <div onClick={handleCart}>
               <IoCart size={24} />
               <p>{cartvalueLength}</p>
-            </Link>
+            </div>
             <div>
               <IoIosSearch size={24} />
             </div>

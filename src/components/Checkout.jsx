@@ -6,6 +6,7 @@ import {
   GetLanguages,
 } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
+import Navigation from "./Navigation";
 
 const Checkout = () => {
   const [countryId, setCountryId] = useState(0);
@@ -75,6 +76,9 @@ const Checkout = () => {
 
   return (
     <div className="w-full ">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="w-full flex flex-col md:flex-row gap-4  px-[5vw]">
         <div className="bg-purple-200  w-full md:w-[66%]">
           <div className="p-[3vw] bg-gray-100 min-h-screen flex flex-col items-center">

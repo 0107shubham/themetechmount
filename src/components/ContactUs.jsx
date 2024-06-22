@@ -1,9 +1,13 @@
 import React from "react";
 import Footer from "./Footer";
+import Navigation from "./Navigation";
 
 const ContactUs = () => {
   return (
     <div className="w-full bg-[#F3F5F4]">
+      <div className="w-full bg-black">
+        <Navigation />
+      </div>
       <div className=" w-full grid grid-cols-1 sm:grid-cols-2 px-[5vw] gap-[2vw] mt-[4vw] mb-[6vw] sm:px-[7vw]">
         <div className="">
           <div className="bg-white relative w-[90%] aspect-square pb-[5vw]  flex flex-col pt-[5vw] justify-start items-center rounded-full ">

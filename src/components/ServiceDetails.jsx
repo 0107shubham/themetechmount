@@ -2,10 +2,14 @@ import React from "react";
 import { RiDoubleQuotesL } from "react-icons/ri";
 import TicketBooking from "./TicketBooking";
 import Footer from "./Footer";
+import Navigation from "./Navigation";
 
 const ServiceDetails = () => {
   return (
     <div className="w-full">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="w-full px-[20vw] py-[4vw]">
         <div className="w-full flex justify-end items-end   h-[34vw]  bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717936085/post-image-002-780x590_biw6qa.jpg')]">
           <div className="bg-[#F7F7F7] flex   w-[30vw] h-[10vw] pt-[1.5vw]">

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { CiSearch } from "react-icons/ci";
 import { events } from "../Data";
 import { useParams } from "react-router-dom";
+import Navigation from "./Navigation";
 
 const Portfolio = () => {
   const { id } = useParams();
@@ -16,6 +17,9 @@ const Portfolio = () => {
 
   return (
     <div className="w-full">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="w-full">
         <div className="relative w-full py-[4vw] px-[7vw]">
           <div className="w-full">
@@ -169,7 +173,7 @@ const Portfolio = () => {
                     className="relative w-full sm:w-full aspect-square bg-cover overflow-hidden group"
                     style={{ backgroundImage: `url(${items.imageURL})` }}
                   >
-                    <div className="absolute top-0 left-0 w-full h-full bg-purple-300 transform -translate-y-full transition-transform duration-1000 ease-in-out group-hover:translate-y-0">
+                    <div className="absolute top-0 left-0 w-full h-full bg-purple-300  -translate-y-full transform transition-transform duration-1000 ease-in-out group-hover:translate-y-0">
                       <div className="ml-auto mr-auto mt-[38%] text-white hover:bg-white hover:text-purple-500  w-fit rounded-full border-white border-[.1vw] p-[.5vw]">
                         <CiSearch className=" text-[2vw] " />
                       </div>

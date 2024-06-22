@@ -9,6 +9,7 @@ import { FaWineBottle } from "react-icons/fa";
 import { FaGlassCheers } from "react-icons/fa";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import TicketBooking from "./TicketBooking";
+import Navigation from "./Navigation";
 
 const reviews = [
   {
@@ -57,7 +58,10 @@ const Services = () => {
   };
 
   return (
-    <div className=" w-full  p-[4vw]">
+    <div className=" w-full ">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="grid grid-cols-2">
         <div className="w-full">
           <p className="text-[1vw] text-black">ABOUT US</p>

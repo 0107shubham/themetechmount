@@ -3,6 +3,7 @@ import { IoMdPerson } from "react-icons/io";
 import { GoComment } from "react-icons/go";
 import { useParams } from "react-router-dom";
 import { BlogsData } from "../Data";
+import Navigation from "./Navigation";
 
 const BlogDetails = () => {
   const { id } = useParams();
@@ -17,6 +18,9 @@ const BlogDetails = () => {
 
   return (
     <div className="w-full">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
       <div className="w-full px-[21vw] py-[5vw] ">
         {/* Comment Section */}
         <div className="mb-8 bg-[#F5F5F5]">

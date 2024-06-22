@@ -2,6 +2,7 @@ import React from "react";
 import Events from "./Events";
 import Blogs from "./Blogs";
 import Footer from "./Footer";
+import Navigation from "./Navigation";
 
 const events = [
   {
@@ -37,8 +38,11 @@ const events = [
 ];
 const AboutUs = () => {
   return (
-    <div className="w-full  p-[4vw]">
-      <div className="w-full grid grid-cols-2">
+    <div className="w-full  ">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
+      <div className="w-full grid grid-cols-2 pt-[2vw]">
         <div className="">
           <p>WELCOME TO</p>
           <p className="uppercase text-[4vw] font-semibold leading-tight">

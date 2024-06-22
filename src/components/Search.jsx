@@ -7,6 +7,7 @@ import { teamMate } from "../Data";
 import { products } from "../Data";
 import { events } from "../Data";
 import { BlogsData } from "../Data";
+import Navigation from "./Navigation";
 
 const Search = () => {
   console.log(pageResult);

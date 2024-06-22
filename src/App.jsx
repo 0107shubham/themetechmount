@@ -23,9 +23,12 @@ import Flowbite from "./components/Flowbite";
 import Cart from "./components/Cart";
 import Checkout from "./components/Checkout";
 import ScrollToTop from "./components/ScrollToTop";
+import EventsDetails from "./components/EventsDetails";
+import AllEvents from "./components/AllEvents";
 
 const Layout = () => (
   <>
+    <ScrollToTop />
     <Outlet />
     <Footer />
   </>
@@ -34,24 +37,34 @@ const Layout = () => (
 const router = createBrowserRouter([
   {
     path: "/",
+
     element: <Layout />,
     children: [
-      { path: "/", element: <Home /> },
+      { path: "", element: <Home /> },
       { path: "/welcome", element: <Welcome /> },
       { path: "/events", element: <Events /> },
       { path: "/review", element: <Review /> },
       { path: "/ticket-booking", element: <TicketBooking /> },
       { path: "/blogs", element: <Blogs /> },
       { path: "/instagram", element: <Instagram /> },
-      { path: "/aboutUs", element: <AboutUs /> },
+      { path: "aboutUs", element: <AboutUs /> },
       { path: "/services", element: <Services /> },
       { path: "/serviceDetails", element: <ServiceDetails /> },
       { path: "/teamDetails", element: <TeamDetails /> },
       { path: "/portfolio/:id", element: <Portfolio /> },
+      { path: "/allEvents", element: <AllEvents /> },
+      { path: "/eventsDetails/:id", element: <EventsDetails /> },
       { path: "/blogClassic", element: <BlogClassic /> },
       { path: "/contactUs", element: <ContactUs /> },
-      { path: "/shop", element: <Shop /> },
-      { path: "/search", element: <Search /> },
+
+      {
+        path: "/shop",
+        element: <Shop />,
+      },
+      {
+        path: "/search",
+        element: <Search />,
+      },
       { path: "/flowbite", element: <Flowbite /> },
       { path: "/cart", element: <Cart /> },
       { path: "/checkout", element: <Checkout /> },

@@ -1,0 +1,9 @@
+.hover-bg {
+  background-color: green;
+  background-size: cover;
+  transition: background-image 0.3s ease-in-out;
+}
+
+.hover-bg:hover {
+  background-image: var(--hover-bg-url);
+}

@@ -8,3 +8,29 @@
     text-orientation: upright;
   }
 }
+
+input[type="search"] {
+  outline: none !important;
+}
+
+input[type="search"]:focus {
+  outline: none !important;
+  box-shadow: none;
+  border: none;
+}
+
+input:focus {
+  outline: none !important;
+  box-shadow: none;
+  border: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button:focus-visible {
+  outline: none !important;
+  box-shadow: none;
+}
