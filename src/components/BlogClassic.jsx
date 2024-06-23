@@ -100,16 +100,19 @@ const BlogClassic = () => {
             </h2>
             {/* horiZontatal line */}
             <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
-            <p className="text-[1.4vw] text-gray-600 w-full  flex justify-around px-[3vw]">
+            <p className="text-[18px] sm:text-[1.4vw] text-gray-600 w-full  flex justify-around px-[3vw]">
               <span>{article.author}</span> | <span>{article.date}</span> |{" "}
               <span>comment</span>
             </p>
             <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
-            <p className="my-[1.2vw] text-[1.2vw] text-gray-400">
+            <p className="my-[1.2vw] text-[14px] sm:text-[1.2vw] text-gray-400">
               {article.summary}
             </p>
             <button className="border-[.1vw] flex items-center px-[1vw] py-[.5vw] bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] hover:bg-gradient-to-l ">
-              <a href="#" className="text-black text-[1.2vw] font-semibold">
+              <a
+                href="#"
+                className="text-black text-[16px] sm:text-[1.2vw] font-semibold"
+              >
                 <Link to={`/blogs_details/${article.id}`}>
                   continue reading
                 </Link>{" "}
