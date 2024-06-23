@@ -87,13 +87,13 @@ const ReviewComment = () => {
                 />
               </div>
               <div className="z-10 w-[70%] px-[2vw]  ">
-                <p className="text-base  text-[4vw] sm:text-[2vw] font-mono leading-tight">
+                <p className=" text-[3.4vw] sm:text-[2vw] font-mono leading-tight">
                   {item.comment}
                 </p>
                 <p className=" text-[1.5vw]  sm:text-[0.9vw] uppercase  my-[.5vw]  text-gray-400 leading-normal">
                   {item.position}
                 </p>
-                <p className="text-[3vw] sm:text-[1.5vw] uppercase my-[.5vw] font-mono leading-normal">
+                <p className="text-[2.5vw] sm:text-[1.5vw] uppercase my-[.5vw] font-mono leading-normal">
                   {item.author}
                 </p>
               </div>

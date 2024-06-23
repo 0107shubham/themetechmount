@@ -108,13 +108,14 @@ const Navigation = () => {
           }`}
         >
           <nav className="p-4">
-            <ul className="space-y-8 ">
-              <li className="border-b-[1px] text-lg my-[2vw] border-gray-400 ">
+            <ul className=" ">
+              <li className=" text-lg  ">
                 <Link to="/">
                   <p className="text-white hover:text-purple-500">Home</p>
                 </Link>
               </li>
-              <li className="border-b-[1px]  my-[2vw] border-gray-400">
+              <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
+              <li className="   ">
                 <p
                   onClick={() => setIsPagesVisible(!isPagesVisible)}
                   className="text-white text-lg cursor-pointer hover:text-purple-500"
@@ -122,34 +123,38 @@ const Navigation = () => {
                   Pages
                 </p>
                 {isPagesVisible && (
-                  <div className="bg-black space-y-6 z-40 divide-y text-lg  w-full pl-[2vw]">
+                  <div className="bg-black  cursor-pointer  z-40  text-lg  w-full pl-[2vw]">
                     <div
                       onClick={() => handleNavigation("/aboutUs")}
                       className="text-white hover:underline whitespace-nowrap w-full  font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       About Us
                     </div>
+                    <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
                       onClick={() => handleNavigation("/services")}
                       className="text-white text-lg w-full  font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       Services
                     </div>
+                    <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
                       onClick={() => handleNavigation("/serviceDetails")}
                       className="text-white  w-full whitespace-nowrap font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       Services Details
                     </div>
+                    <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
                       onClick={() => handleNavigation("/teamDetails")}
-                      className="text-white  w-full whitespace-normal  font-medium hover:text-purple-500 my-[.8vw]"
+                      className="text-white  cursor-pointer  w-full whitespace-normal  font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       Team Details
                     </div>
                   </div>
                 )}
               </li>
+              <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
               {/* <li className="border-b-[1px]  border-gray-400 ">
                 <p className="text-white group hover:text-purple-500">Pages</p>
                 <div className="bg-black absolute  cursor-pointer   z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
@@ -168,7 +173,7 @@ const Navigation = () => {
                   </div>
                 </div>
               </li> */}
-              <li className="border-b-[1px]  text-lg border-gray-400">
+              <li className="  text-lg ">
                 <p
                   onClick={() => setIsPortfolioVisible(!isPortfolioVisible)}
                   className="text-white cursor-pointer hover:text-purple-500"
@@ -186,7 +191,8 @@ const Navigation = () => {
                   </div>
                 )}
               </li>
-              <li className="border-b-[1px] text-lg border-gray-400">
+              <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
+              <li className=" text-lg ">
                 <p
                   onClick={() => setIsBlogVisible(!isBlogVisible)}
                   className="text-white cursor-pointer hover:text-purple-500"
@@ -194,35 +200,35 @@ const Navigation = () => {
                   Blog
                 </p>
                 {isBlogVisible && (
-                  <div className="bg-black divide-y  w-full pl-[2vw]">
+                  <div className="bg-black  w-full pl-[2vw]">
                     <div
                       onClick={() => handleNavigation("/blogClassic")}
-                      className="text-white  font-medium hover:text-purple-500 my-[.5vw]"
+                      className="text-white cursor-pointer font-medium hover:text-purple-500 "
                     >
                       Blogs Classic
                     </div>
+                    <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
                       onClick={() => handleNavigation("/blogs_details/1")}
-                      className="text-white font-medium hover:text-purple-500 my-[.5vw]"
+                      className="text-white font-medium   cursor-pointer   hover:text-purple-500 "
                     >
                       Blogs Details
                     </div>
                   </div>
                 )}
               </li>
-              <li className="border-b-[1px]  border-gray-400 ">
+              <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
+              <li className="   ">
                 <div onClick={handleContactUs}>
-                  <p className="text-white text-lg hover:text-purple-500">
+                  <p className="text-white text-lg  cursor-pointer  hover:text-purple-500">
                     Contact Us
                   </p>
                 </div>
               </li>
-              <li
-                onClick={handlePortfolioDetails}
-                className="border-b-[1px]  border-gray-400 "
-              >
-                <div onClick={handleContactUs}>
-                  <p className="text-white text-lg hover:text-purple-500">
+              <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
+              <li onClick={handleShop} className="  ">
+                <div>
+                  <p className="text-white text-lg  cursor-pointer  hover:text-purple-500">
                     Shop
                   </p>
                 </div>
