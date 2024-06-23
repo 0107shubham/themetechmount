@@ -78,32 +78,38 @@ const Navigation = () => {
 
   return (
     <div onClick={handleButtonClick} className="w-full">
-      <div className="text-white flex justify-between items-center  w-full h-[10vw] relative lg:hidden">
-        <div className="text-lg font-bold">
+      <div className="text-white flex justify-between items-center  w-full h-[15vw] sm:h-[12vw] relative lg:hidden">
+        <div className=" text-[4vw] sm:text-[2vw]font-bold">
           <Link to="/">PRESENTUP</Link>
         </div>
         <div className="flex items-center space-x-4">
-          <div>
-            <IoCart size={24} onClick={handleCart} />
+          <div className="relative cursor-pointer ">
+            <IoCart
+              className=" text-[6vw] sm:text-[4vw]"
+              onClick={handleCart}
+            />
+            {cartvalueLength === 0 ? (
+              ""
+            ) : (
+              <p className="bg-purple-400 right-[3.2vw] top-[3.3vw]  sm:right-[2.5vw] sm:top-[2.8vw]  flex justify-center items-center text-[2.5vw]  sm:text-[2vw]  absolute w-[4vw] h-[4vw]  sm:w-[3.5vw] sm:h-[3.5vw]  rounded-full">
+                {cartvalueLength}
+              </p>
+            )}
           </div>
           <div>
-            <IoIosSearch size={24} />
+            <IoIosSearch className=" text-[6vw] cursor-pointer sm:text-[4vw]" />
           </div>
           <div
             onClick={() => setIsNavVisible(!isNavVisible)}
-            className="cursor-pointer"
+            className="cursor-pointer  text-[6vw] sm:text-[4vw]"
           >
-            {isNavVisible ? (
-              <RxCross2 size={24} />
-            ) : (
-              <GiHamburgerMenu size={24} />
-            )}
+            {isNavVisible ? <RxCross2 /> : <GiHamburgerMenu />}
           </div>
         </div>
 
         {/* Navigation Section */}
         <div
-          className={`absolute top-[10vw] z-50 mt-1 left-0 w-full bg-black  text-white transition-all duration-300 ${
+          className={`absolute top-full z-50  left-0 w-full bg-black  text-white transition-all duration-300 ${
             isNavVisible ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
         >
@@ -125,28 +131,28 @@ const Navigation = () => {
                 {isPagesVisible && (
                   <div className="bg-black  cursor-pointer  z-40  text-lg  w-full pl-[2vw]">
                     <div
-                      onClick={() => handleNavigation("/aboutUs")}
+                      onClick={handleAbout}
                       className="text-white hover:underline whitespace-nowrap w-full  font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       About Us
                     </div>
                     <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
-                      onClick={() => handleNavigation("/services")}
+                      onClick={handleService}
                       className="text-white text-lg w-full  font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       Services
                     </div>
                     <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
-                      onClick={() => handleNavigation("/serviceDetails")}
+                      onClick={handleServiceDetail}
                       className="text-white  w-full whitespace-nowrap font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       Services Details
                     </div>
                     <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
-                      onClick={() => handleNavigation("/teamDetails")}
+                      onClick={handleteamDetails}
                       className="text-white  cursor-pointer  w-full whitespace-normal  font-medium hover:text-purple-500 my-[.8vw]"
                     >
                       Team Details
@@ -182,7 +188,7 @@ const Navigation = () => {
                 </p>
                 {isPortfolioVisible && (
                   <div
-                    onClick={() => handleNavigation("/portfolio/1")}
+                    onClick={handlePortfolioDetails}
                     className="bg-black  top-full w-[20vw] pl-[2vw]"
                   >
                     <div className="text-white whitespace-nowrap cursor-pointer font-medium hover:text-purple-500 my-[.5vw]">
@@ -202,14 +208,14 @@ const Navigation = () => {
                 {isBlogVisible && (
                   <div className="bg-black  w-full pl-[2vw]">
                     <div
-                      onClick={() => handleNavigation("/blogClassic")}
+                      onClick={handleBlogClassic}
                       className="text-white cursor-pointer font-medium hover:text-purple-500 "
                     >
                       Blogs Classic
                     </div>
                     <div className="w-full bg-gray-700 h-[1px] my-[1.2vw]"></div>
                     <div
-                      onClick={() => handleNavigation("/blogs_details/1")}
+                      onClick={handleBlogDetails}
                       className="text-white font-medium   cursor-pointer   hover:text-purple-500 "
                     >
                       Blogs Details
