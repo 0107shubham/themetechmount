@@ -47,7 +47,7 @@ const BlogDetails = () => {
 
           <div className="w-full px-[3px] sm:px-[3vw]">
             <div className="w-full flex items-center   my-[1vw]">
-              <p className="text-[18px] md:text-[1.4vw] text-gray-600 w-full  flex items-center  px-[3vw]">
+              <p className="text-[16px] md:text-[1.4vw] text-gray-600 w-full  flex items-center  px-[3vw]">
                 <span className="flex items-center">
                   {" "}
                   <IoMdPerson className="mr-[.5vw]" />
@@ -63,7 +63,7 @@ const BlogDetails = () => {
             </div>
 
             <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
-            <h2 className="text-[18px] sm:text-[2vw] font-semibold mt-[1vw]">
+            <h2 className="text-[16px] sm:text-[2vw] font-semibold mt-[1vw]">
               CRAS IN JUSTO IN NEQUE IMPERDIET GRAVIDA
             </h2>
             <p className="mt-[1vw] text-[14px] sm:text-[1vw] text-gray-500">
@@ -74,22 +74,21 @@ const BlogDetails = () => {
             </p>
 
             {/* Highlighted Quote */}
-            <div className="bg-white flex flex-col justify-center items-center p-[3vw]  my-[3vw]">
-              <p className="italic text-[18px] sm:text-[1.1vw] font-medium">
+            <div className="bg-white flex flex-col sm:justify-center sm:items-center sm:p-[3vw]  my-[3vw]">
+              <p className="italic text-[14px] sm:text-[1.1vw] font-medium">
                 CONTARY POPULAR IS SIMPLY DUMMY TEXT OF KNOWN PRINTERTHE PRINTUN
                 KNOWN PRINTER TOOK A GALLEY OF TYPE ANAMBT HE PRINTUN KNOWN
                 PRINTER TOOK A GALLEY OF TYPE ANAMBT.
               </p>
               <p className="font-bold mt-[1vw] text-gray-400 text-[14px] sm:text-[.9vw]">
-                {" "}
                 <span className="  font-medium text-gray-700">
                   RASHED KABIR
-                </span>{" "}
+                </span>
                 / CEO, California
               </p>
             </div>
 
-            <p className="my-[2vw] text-gray-600 text-[16px] md:text-[1vw]">
+            <p className="my-[2vw] text-gray-600 text-[14px] md:text-[1vw]">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore Quis ipsum
               suspendisse ultrices gravida.
@@ -111,7 +110,7 @@ const BlogDetails = () => {
 
             {/* Executive's Priorities */}
             <div className="mb-8">
-              <h3 className="text-[18px] sm:text-[1.8vw] my-[1vw] font-bold">
+              <h3 className="text-[16px] sm:text-[1.8vw] my-[1vw] font-bold">
                 LEARN ABOUT THE EXECUTIVE’S PRIORITIES
               </h3>
               <p className="my-[2vw] text-gray-600 text-[14px] sm:text-[1vw] font-medium">
@@ -179,7 +178,7 @@ const BlogDetails = () => {
                 </div>
                 <button
                   type="submit"
-                  className=" bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]  text-black px-[3vw] py-[1vw]  text-[1.2vw] font-semibold"
+                  className=" bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]  text-black px-[3vw] py-[1vw] text-[14px]  text-[1.2vw] font-semibold"
                 >
                   Post Comment
                 </button>
