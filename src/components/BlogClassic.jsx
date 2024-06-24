@@ -105,7 +105,7 @@ const BlogClassic = () => {
               <span>comment</span>
             </p>
             <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
-            <p className="my-[1.2vw] text-[14px] sm:text-[1.2vw] text-gray-400">
+            <p className="my-[1.2vw] text-[10px] sm:text-[1.2vw] text-gray-400">
               {article.summary}
             </p>
             <button className="border-[.1vw] flex items-center px-[1vw] py-[.5vw] bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] hover:bg-gradient-to-l ">

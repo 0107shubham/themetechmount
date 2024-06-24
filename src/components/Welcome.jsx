@@ -11,10 +11,10 @@ const Welcome = () => {
         />
         <div className="w-full p-[5px] sm:-[1vw] md:p-[3vw] ">
           <div className=" ">
-            <p className="text-[12px] sm:text-[14px] md:text-[1.5vw]">
+            <p className="text-[8px] sm:text-[14px] md:text-[1.5vw]">
               WELCOME TO PRESENTUP
             </p>
-            <p className="text-[22px]  sm:text-[17px]  md:text-[2.5vw] whitespace-normal  font-semibold sm:font-bold">
+            <p className="text-[18px]  sm:text-[17px]  md:text-[2.5vw] whitespace-normal  font-semibold sm:font-bold">
               WITH OUR PASSION KNOWLEDGE CREATIV FLAIR INSPIRATION.
             </p>
             <p className="text-[14px] md:text-[1.2vw]  sm:text-[14px]  mt-[1vw] whitespace-normal text-gray-700">
@@ -34,10 +34,10 @@ const Welcome = () => {
             </div>
           </div>
           <div>
-            <button className="p-[.5vw] my-2 text-[14px]  sm:text-[14px] md:text-[16px]  bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
+            <button className="p-[1vw] my-2 text-[14px]  sm:text-[14px] md:text-[16px]  bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
               More About
             </button>
-            <button className="border-black border-[1px]  text-[14px]  sm:text-[14px] md:text-[16px]  p-[.5vw] my-2 ml-[4vw]  hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
+            <button className="border-black border-[1px]  text-[14px]  sm:text-[14px] md:text-[16px]  p-[vw] my-2 ml-[4vw]  hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
               Contact Us
             </button>
           </div>

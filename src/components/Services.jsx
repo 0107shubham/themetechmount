@@ -64,21 +64,23 @@ const Services = () => {
       </div>
       <div className="grid grid-cols-2">
         <div className="w-full">
-          <p className="text-[1vw] text-black">ABOUT US</p>
+          <p className="text-[8px] sm:text-[10px]  lg:text-[1vw] text-black">
+            ABOUT US
+          </p>
           <p className="text-black text-[4vw] leading-tight font-semibold">
             WE’RE THE LARGEST EVENTS COMPANY
           </p>
-          <p className="text-[1vw] mt-[10vw] pr-[2vw] text-gray-800">
+          <p className=" text-[10px] sm:text-[2vw] mt-[10vw] pr-[2vw] text-gray-800">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
             ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
             accumsan lacus vel facilisis.
           </p>
           <div className="mt-[2vw] flex ">
-            <button className="outline-none  py-[.5vw] px-[2vw]   bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] mr-[1vw]">
+            <button className="outline-none text-[12px]  sm:text-[2vw]  py-[.5vw] px-[2vw]   bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] mr-[1vw]">
               More About
             </button>
-            <button className="outline-none border-black border-[.1vw] py-[.5vw] px-[2vw]  text-black text-[1vw] ml-[.5vw]">
+            <button className="outline-none text-[12px] sm:text-[2vw]  border-black border-[.1vw] py-[.5vw] px-[2vw]  text-black ml-[.5vw]">
               Contact US
             </button>
           </div>
@@ -99,18 +101,20 @@ const Services = () => {
             PROVIDE BEST EVENT SERVICES!
           </p>
         </div>
-        <div className="w-full flex justify-center ">
+        <div className="w-full flex flex-col md:flex-row justify-center ">
           <div className="mr-[1vw] flex flex-col items-center  w-full pl-[2vw]">
             {/* 1 */}
             <div className="w-full   text-white">
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
-                  <div className="flex w-full">
-                    <GiSparkles className="text-[2vw] text-purple-700  brightness-200   hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">PRIVATE PARTY</p>
+                  <div className="flex  w-full">
+                    <GiSparkles className=" text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700  brightness-200   hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      PRIVATE PARTY
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className=" p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className=" text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -122,11 +126,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <FaWineGlassAlt className="text-[2vw] text-purple-700  brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">WEDDING & BIRTHDAY PARTY</p>
+                    <FaWineGlassAlt className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700  brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      WEDDING & BIRTHDAY PARTY
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -138,11 +144,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <MdPhotoCamera className="text-[2vw] text-purple-700  brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">UNFORGETTABLE TIME</p>
+                    <MdPhotoCamera className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700  brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      UNFORGETTABLE TIME
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -153,11 +161,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <FaMasksTheater className="text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">UNIQUE SCENARIOS</p>
+                    <FaMasksTheater className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      UNIQUE SCENARIOS
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -165,8 +175,9 @@ const Services = () => {
           </div>
 
           {/* vertical line */}
+          <div className="w-full border-t-[.1vw] md:hidden border-gray-400 my-[2vw]"></div>
 
-          <div className="h-[28vw] w-[2px] bg-gray-500  mx-[2vw]"></div>
+          <div className="h-[28vw] hidden md:block w-[2px] bg-gray-500  mx-[2vw]"></div>
           {/* 1 */}
           {/* right conatainer  */}
           <div className="mr-[1vw] flex flex-col items-center  w-full pl-[2vw]">
@@ -174,11 +185,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <FaPeoplePulling className="text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">CORPARATE PARTY</p>
+                    <FaPeoplePulling className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      CORPARATE PARTY
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -190,11 +203,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <FaWineBottle className="text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">DRINK OUTSIDE THE BOX</p>
+                    <FaWineBottle className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      DRINK OUTSIDE THE BOX
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -206,11 +221,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <FaGlassCheers className="text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">NIGHT CLUB PARTY</p>
+                    <FaGlassCheers className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700 brightness-200  hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      NIGHT CLUB PARTY
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
@@ -221,11 +238,13 @@ const Services = () => {
               <div className="w-full ">
                 <div className="flex justify-between cursor-pointer group  ">
                   <div className="flex w-full">
-                    <FaPeopleRobbery className="text-[2vw] text-purple-700 brightness-200 hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-                    <p className="">MUTHALOVIN DANCE PARTY</p>
+                    <FaPeopleRobbery className="  text-[14px] sm:text-[25px] md:text-[2vw] text-purple-700 brightness-200 hidden mr-[2vw] group-hover:block opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                    <p className="  text-[14px] sm:text-[25px] md:text-[2vw]">
+                      MUTHALOVIN DANCE PARTY
+                    </p>
                   </div>
-                  <div className="h-[2vw] w-[2vw] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
-                    <MdArrowOutward />
+                  <div className="p-[5px] opacity-0 group-hover:opacity-100 rounded-full border-[.2vw] border-white transition-opacity duration-300 flex items-center justify-center">
+                    <MdArrowOutward className="  text-[14px] sm:text-[25px] md:text-[2vw]" />
                   </div>
                 </div>
               </div>
