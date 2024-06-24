@@ -85,25 +85,25 @@ const Checkout = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
-      <div className="w-full flex flex-col md:flex-row gap-4  px-[5vw]">
-        <div className="bg-purple-200  w-full md:w-[66%]">
+      <div className="w-full flex flex-col lg:flex-row gap-4  px-[5vw]">
+        <div className="bg-purple-200  w-full lg:w-[66%]">
           <div className="p-[3vw] bg-gray-100 min-h-screen flex flex-col items-center">
             <div className="max-w-4xl w-full bg-white p-[3vw] rounded-lg shadow-lg  flex flex-col sm:flex-row">
               <div className=" w-full md:w-[50%]">
-                <h2 className="text-[2.5vw] font-medium mb-[2vw]">
+                <h2 className="text-[6vw] sm:text-[3vw] md:text-[2vw] font-medium mb-[2vw]">
                   Billing Details
                 </h2>
 
                 <form>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-[.1vw] mb-[2vw] ">
-                    <div className="col-span-1">
+                    <div className="col-span-1 text-[4vw] sm:text-[2.5vw] md:text-[1.8vw] ">
                       <label className="block mb-[1vw] font-medium">
                         First name *
                       </label>
                       <input
                         type="text"
                         name="firstName"
-                        className={`w-full text-[1.2vw] p-[.3vw] bg-[#F7F7F7] border-[.1vw] ${
+                        className={`w-full  text-[4vw] sm:text-[2vw] lg:text-[1vw]  p-[.3vw] bg-[#F7F7F7] border-[.1vw] ${
                           errors.firstName
                             ? "border-red-500"
                             : "focus:border-yellow-400 border-gray-600"
@@ -113,14 +113,14 @@ const Checkout = () => {
                         style={{ outline: "none" }}
                       />
                     </div>
-                    <div className="col-span-1">
+                    <div className="col-span-1  text-[4vw] sm:text-[2.5vw] md:text-[1.8vw]  ">
                       <label className="block mb-[1vw] font-medium">
                         Last name *
                       </label>
                       <input
                         type="text"
                         name="lastName"
-                        className={`w-full p-[.3vw] text-[1.2vw]  bg-[#F7F7F7] border-[.1vw] ${
+                        className={`w-full p-[.3vw]  text-[3vw] sm:text-[2vw] lg:text-[1vw]    bg-[#F7F7F7] border-[.1vw] ${
                           errors.lastName
                             ? "border-red-500"
                             : "focus:border-blue-500 border-gray-600"
@@ -131,25 +131,25 @@ const Checkout = () => {
                       />
                     </div>
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]  text-[4vw] sm:text-[2.5vw] md:text-[1.7vw] ">
                     <label className=" mb-[1vw] font-medium">
                       Company name (optional)
                     </label>
                     <input
                       type="text"
                       name="companyName"
-                      className="w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border-[.1vw] border-green-600  focus:outline-none focus:border-yellow-500"
+                      className="w-full  p-[.3vw]   text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border-[.1vw] border-green-600  focus:outline-none focus:border-yellow-500"
                       onChange={handleChange}
                       style={{ outline: "none" }}
                     />
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]  text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]  ">
                     <label className="block mb-[1vw] font-medium">
                       Country / Region *
                     </label>
                     <select
                       name="country"
-                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]   text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border  ${
                         errors.country
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -174,14 +174,14 @@ const Checkout = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]   text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]  ">
                     <label className="block mb-[1vw] font-medium">
                       Street address *
                     </label>
                     <input
                       type="text"
                       name="address"
-                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  mb-[1vw] ${
+                      className={`w-full  p-[.3vw]   text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border  mb-[1vw] ${
                         errors.address
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -194,20 +194,20 @@ const Checkout = () => {
                     <input
                       type="text"
                       name="apartment"
-                      className="w-full  p-[.3vw]  text-[1.2vw] bg-[#F7F7F7]  border  focus:border-blue-500"
+                      className="w-full  p-[.3vw]    text-[3vw] sm:text-[2vw] lg:text-[1vw]    bg-[#F7F7F7]  border  focus:border-blue-500"
                       placeholder="Apartment, suite, unit, etc. (optional)"
                       onChange={handleChange}
                       style={{ outline: "none" }}
                     />
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]   text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]  ">
                     <label className="block mb-[1vw] font-medium">
                       Town / City *
                     </label>
                     <input
                       type="text"
                       name="city"
-                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]   text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border  ${
                         errors.city
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -217,13 +217,13 @@ const Checkout = () => {
                       style={{ outline: "none" }}
                     />
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]   text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]   ">
                     <label className="block mb-[1vw] font-medium">
                       State *
                     </label>
                     <select
                       name="state"
-                      className={`w-full  p-[.3vw]  text-[1.2vw] bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]    text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border  ${
                         errors.state
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -248,14 +248,14 @@ const Checkout = () => {
                       ))}
                     </select>
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]  text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]   ">
                     <label className="block mb-[1vw] font-medium">
                       ZIP Code *
                     </label>
                     <input
                       type="text"
                       name="zipCode"
-                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]   text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border  ${
                         errors.zipCode
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -265,14 +265,14 @@ const Checkout = () => {
                       style={{ outline: "none" }}
                     />
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]   text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]   ">
                     <label className="block mb-[1vw] font-medium">
                       Phone *
                     </label>
                     <input
                       type="text"
                       name="phone"
-                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]  text-[3vw] sm:text-[2vw] lg:text-[1vw]    bg-[#F7F7F7]  border  ${
                         errors.email
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -282,14 +282,14 @@ const Checkout = () => {
                       style={{ outline: "none" }}
                     />
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]   text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]  ">
                     <label className="block mb-[1vw] font-medium">
                       Email address *
                     </label>
                     <input
                       type="email"
                       name="email"
-                      className={`w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  ${
+                      className={`w-full  p-[.3vw]  text-[3vw] sm:text-[2vw] lg:text-[1vw]      bg-[#F7F7F7]  border  ${
                         errors.email
                           ? "border-red-500"
                           : "focus:border-blue-500 border-gray-600"
@@ -299,13 +299,13 @@ const Checkout = () => {
                       style={{ outline: "none" }}
                     />
                   </div>
-                  <div className="mb-[2vw]">
+                  <div className="mb-[2vw]   text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw]  ">
                     <label className="block mb-[1vw] font-medium">
                       Order notes (optional)
                     </label>
                     <textarea
                       name="notes"
-                      className="w-full  p-[.3vw] text-[1.2vw]  bg-[#F7F7F7]  border  focus:border-blue-500 border-gray-600"
+                      className="w-full  p-[.3vw]  text-[3vw] sm:text-[2vw] lg:text-[1vw]     bg-[#F7F7F7]  border  focus:border-blue-500 border-gray-600"
                       placeholder="Notes about your order, e.g. special notes for delivery."
                       onChange={handleChange}
                       style={{ outline: "none" }}
@@ -313,14 +313,14 @@ const Checkout = () => {
                   </div>
                 </form>
               </div>
-              <div className=" w-full md:w-[50%] ml-[1vw]">
+              <div className=" w-full md:w-[50%] ml-[1vw]  text-[4vw] sm:text-[2.5vw]  md:text-[1.7vw] ">
                 <h2 className="text-[2.5vw] whitespace-nowrap font-medium mb-[1.8vw]">
                   Additional information
                 </h2>
                 <div className="">
                   <label
                     htmlFor="orderNotes"
-                    className="block text-[1vw] text-[1.2vw]  font-medium text-gray-700 my-[.5vw]"
+                    className="block text-[20px] sm:text-[2.5vw] md:text-[2vw]  font-medium text-gray-700 my-[.5vw]"
                   >
                     Order notes (optional)
                   </label>
@@ -328,7 +328,7 @@ const Checkout = () => {
                     id="orderNotes"
                     name="orderNotes"
                     rows="3"
-                    className="mt-1 text-[1vw] block w-full bg-[#F7F7F7] border-gray-300  focus:border-purple-500"
+                    className="mt-1   text-[3vw] sm:text-[2vw] lg:text-[1vw]     block w-full bg-[#F7F7F7] border-gray-300  focus:border-purple-500"
                     placeholder="Notes about your order, e.g. special notes for delivery."
                     value={orderNotes}
                     onChange={handleNotesChange}
@@ -338,7 +338,7 @@ const Checkout = () => {
               </div>
             </div>
 
-            <div className="max-w-4xl w-full flex-container bg-white p-[3vw] mt-[3vw] rounded-lg shadow-lg">
+            <div className="max-w-4xl w-full flex-container  text-[3vw] sm:text-[2vw] lg:text-[1vw]    bg-white p-[3vw] mt-[3vw] rounded-lg shadow-lg">
               <h2 className="text-[2.5vw] font-bold mb-[2vw]">Your order</h2>
               <div className="mb-[2vw] border divide-y p-[1vw]">
                 <div className="flex justify-between  mb-[1vw]">
@@ -349,43 +349,59 @@ const Checkout = () => {
                   {cart.map((item) => (
                     <div>
                       <div className="flex justify-between">
-                        <p>
+                        <p className="text-[3vw] sm:text-[2vw] lg:text-[1vw]  font-medium">
                           {item.name} × {item.quantity}
                         </p>
-                        <p>{item.price}</p>
+                        <p className="text-[3vw] sm:text-[2vw] lg:text-[1vw]  font-medium">
+                          {item.price}
+                        </p>
                       </div>
                       <div className="w-full h-[1px] bg-gray-200 my-[.5vw]"></div>
                     </div>
                   ))}
                 </div>
                 <div className="flex justify-between mb-[1vw]">
-                  <span className="text-[1.5vw] font-medium">Subtotal</span>
-                  <span className="text-[1.5vw]">{totalPrice}</span>
+                  <span className="  text-[3vw] sm:text-[2vw] lg:text-[1vw]    font-medium">
+                    Subtotal
+                  </span>
+                  <span className="  text-[3vw] sm:text-[2vw] lg:text-[1vw]    ">
+                    {totalPrice}
+                  </span>
                 </div>
                 <div className="flex justify-between mb-[1vw]">
-                  <span className="text-[1.5vw] font-medium">Total</span>
-                  <span className="text-[1.5vw]">{totalPrice}</span>
+                  <span className="  text-[3vw] sm:text-[2vw] lg:text-[1vw]    font-medium">
+                    Total
+                  </span>
+                  <span className="  text-[3vw] sm:text-[2vw] lg:text-[1vw] font-medium   ">
+                    {totalPrice}
+                  </span>
                 </div>
               </div>
               <div className="w-full flex justify-end ">
-                <button className=" bg-purple-600 px-[1vw] text-[1.5vw] text-white w-fit py-[1vw] rounded">
+                <button className=" bg-purple-600 px-[1vw]  text-[3vw] sm:text-[2vw] lg:text-[1vw]    text-white w-fit py-[1vw] rounded">
                   Place Order
                 </button>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full md:w-[34%] ">
+        <div className="w-full lg:w-[34%] ">
           <div className="max-w-2xl mx-auto mt-8 space-y-8">
             {/* Archives Card */}
             <div className="bg-white rounded-lg shadow-md divide-y divide-gray-300 p-4">
-              <h2 className="text-black font-bold text-[3vw] mb-4">Archives</h2>
+              <h2 className="text-black font-bold   text-[3vw] sm:text-[2vw] lg:text-[1vw]    mb-4">
+                Archives
+              </h2>
               <div className="divide-y divide-gray-300">
                 <div className="py-2">
-                  <h3 className="text-black  text-[1.2vw]">October 2018</h3>
+                  <h3 className="text-black   text-[3vw] sm:text-[2vw] lg:text-[1vw]   ">
+                    October 2018
+                  </h3>
                 </div>
                 <div className="py-2">
-                  <h3 className="text-black text-[1.2vw]">September 2018</h3>
+                  <h3 className="text-black   text-[3vw] sm:text-[2vw] lg:text-[1vw]    ">
+                    September 2018
+                  </h3>
                 </div>
               </div>
             </div>
@@ -398,7 +414,7 @@ const Checkout = () => {
               <h2 className="text-black font-bold text-[3vw] mb-4">
                 Categories
               </h2>
-              <ul className="divide-y divide-gray-300 text-[1.2vw]">
+              <ul className="divide-y divide-gray-300   text-[3vw] sm:text-[2vw] lg:text-[1vw]    ">
                 <li className="py-2 ">Engagement</li>
                 <li className="py-2">Event Tips</li>
                 <li className="py-2">Events for Kids</li>
