@@ -37,7 +37,7 @@ const Welcome = () => {
             <button className="p-[1vw] my-2 text-[14px]  sm:text-[14px] md:text-[16px]  bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
               More About
             </button>
-            <button className="border-black border-[1px]  text-[14px]  sm:text-[14px] md:text-[16px]  p-[vw] my-2 ml-[4vw]  hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
+            <button className="border-black border-[1px]  text-[14px]  sm:text-[14px] md:text-[16px]  p-[1vw] my-2 ml-[4vw]  hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]">
               Contact Us
             </button>
           </div>
