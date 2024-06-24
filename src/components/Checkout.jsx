@@ -7,8 +7,14 @@ import {
 } from "react-country-state-city";
 import "react-country-state-city/dist/react-country-state-city.css";
 import Navigation from "./Navigation";
+import { cartState } from "../state/cartState";
+import { useRecoilValue, useRecoilState } from "recoil";
+
+import { cartPrice } from "../state/cartState";
 
 const Checkout = () => {
+  const [cart, setCart] = useRecoilState(cartState);
+  const [totalPrice, setTotalPrice] = useRecoilState(cartPrice);
   const [countryId, setCountryId] = useState(0);
   const [stateId, setStateId] = useState(0);
   const [cityId, setCityId] = useState(0);
@@ -339,17 +345,26 @@ const Checkout = () => {
                   <span className="text-[1.5vw]  font-medium">Product</span>
                   <span className="text-[1.5vw] font-medium">Subtotal</span>
                 </div>
-                <div className="flex justify-between  mb-[1vw]">
-                  <span className="text-[1.2vw]">Cake Candles × 1</span>
-                  <span className="text-[1.2vw]">$$$$$$</span>
+                <div className="flex flex-col justify-between  mb-[1vw]">
+                  {cart.map((item) => (
+                    <div>
+                      <div className="flex justify-between">
+                        <p>
+                          {item.name} × {item.quantity}
+                        </p>
+                        <p>{item.price}</p>
+                      </div>
+                      <div className="w-full h-[1px] bg-gray-200 my-[.5vw]"></div>
+                    </div>
+                  ))}
                 </div>
                 <div className="flex justify-between mb-[1vw]">
                   <span className="text-[1.5vw] font-medium">Subtotal</span>
-                  <span className="text-[1.5vw]">$$$$$$</span>
+                  <span className="text-[1.5vw]">{totalPrice}</span>
                 </div>
                 <div className="flex justify-between mb-[1vw]">
                   <span className="text-[1.5vw] font-medium">Total</span>
-                  <span className="text-[1.5vw]">$$$$$$</span>
+                  <span className="text-[1.5vw]">{totalPrice}</span>
                 </div>
               </div>
               <div className="w-full flex justify-end ">
