@@ -23,7 +23,6 @@ const Portfolio = () => {
       <div className="w-full">
         <div className="relative w-full py-[4vw] px-[7vw]">
           <div className="w-full">
-            <p>{mainFiltredData.title}</p>
             <img
               src={mainFiltredData.imageURL}
               alt={mainFiltredData.title}
@@ -32,7 +31,7 @@ const Portfolio = () => {
           </div>
 
           {/* right card */}
-          <div className="absolute right-[10vw] top-[30vw]  w-[25vw] h-[25vw] bg-[#F5F5F5]">
+          <div className="absolute right-[10vw] hidden lg:block top-[30vw]  w-[25vw] h-[25vw] bg-[#F5F5F5]">
             <div className="flex  items-center  py-[.7vw]">
               <p className="text-black text-[1.2vw] font-semibold mx-[1vw]">
                 Creative Director{" "}
@@ -72,26 +71,26 @@ const Portfolio = () => {
           </div>
 
           <div className="w-[65%]  my-[1vw] ">
-            <p className="text-[2vw] font-semibold  my-[1vw] ">
+            <p className=" text-[5vw] sm:text[3vw]  md:text-[4vw] font-semibold  my-[1vw] ">
               FORRIGN EXCHANGE
             </p>
-            <p className="text-[1vw] text-gray-400 font-normal  my-[1vw] ">
+            <p className="text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  text-gray-400 font-normal  my-[1vw] ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
               ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
               accumsan lacus vel facilisis.
             </p>
-            <p className="text-[1vw] text-gray-400 font-normal my-[1vw] ">
+            <p className="text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  text-gray-400 font-normal my-[1vw] ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore maecenas accumsan
               lacus vel facilisis.
             </p>
           </div>
           <div>
-            <p className="text-[2vw] font-semibold text-black  my-[1vw] ">
+            <p className=" text-[4.5vw] sm:text[3vw]  md:text-[4vw]  font-semibold text-black  my-[1vw] ">
               HEAR TO KNOW ABOUT OUR PROJECT
             </p>
-            <p className="text-[1vw] text-gray-400 font-normal  my-[1vw] ">
+            <p className="text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  text-gray-400 font-normal  my-[1vw] ">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor incididunt maecenas
@@ -105,48 +104,52 @@ const Portfolio = () => {
               <img
                 src="https://res.cloudinary.com/drvjsegeb/image/upload/v1718108770/double_quates_zwmu5z.png"
                 alt="double_quates"
-                className="h-[5vw] w-[8vw] "
+                className=" h-[9vw] sm:h-[7vw] lg:h-[5vw]  w-[14vw]  sm:w-[12vw] lg:w-[8vw] "
               />
             </div>
             <div className="ml-[2vw] ">
-              <p className="text-[2.5vw] font-semibold leading-none">
+              <p className="text-[5vw]   sm:text-[4vw]  md:text-[2.5vw]     font-semibold leading-none">
                 EVENTS CONTRARY TO POPUL NOTAR BELIEF, LOREM IPSUM IS NOT SIMPLY
                 RANDOM POPULAR BEL TEXT INDIK IT IN HAS ROOTS IN A PIECE OF
                 CLASSICAL
               </p>
-              <p className="text-[1vw] text-gray-400 font-normal  my-[1vw] ">
+              <p className="text-[2.5vw]   sm:text-[2vw]  md:text-[1.2vw]  text-gray-400 font-normal  my-[1vw] ">
                 Group Of Solars CEO
               </p>
-              <p className="text-[1.5vw] text-black font-normal  my-[1vw] ">
+              <p className="text-[3vw]   sm:text-[2.5vw]  md:text-[1.5vw]  text-black font-normal  my-[1vw] ">
                 ALEX JHON MARTIN
               </p>
             </div>
           </div>
 
-          <div className="flex w-full ">
+          <div className="flex flex-col lg:flex-row w-full ">
             <div className="">
-              <p className="text-black font-semibold">Our mission</p>
+              <p className="text-black font-semibold  text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw]">
+                Our mission
+              </p>
 
-              <p className="flex items-center text-[1.2vw] my-[1vw]">
+              <p className="flex items-center text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  my-[1vw]">
                 {" "}
                 <IoArrowForward className="mr-[.5vw] " />
                 consectetur adipiscing elit, sed do ut eiusmod tempor in
               </p>
-              <p className="flex items-center text-[1.2vw] my-[1vw]">
+              <p className="flex items-center text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  my-[1vw]">
                 {" "}
                 <IoArrowForward className="mr-[.5vw] " />
                 ntrary to popular belief, Lorem Ipsum is not simply random text
               </p>
             </div>
-            <div className="ml-[3vw]">
-              <p className="text-black font-semibold">Our Challange</p>
+            <div className="lg:ml-[3vw]">
+              <p className="text-black font-semibold  text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw]">
+                Our Challange
+              </p>
 
-              <p className="flex items-center text-[1.2vw] my-[1vw]">
+              <p className="flex items-center text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  my-[1vw]">
                 {" "}
                 <IoArrowForward className="mr-[.5vw] " />
                 ntrary to popular belief, Lorem Ipsum is not simply random
               </p>
-              <p className="flex items-center text-[1.2vw] my-[1vw]">
+              <p className="flex items-center text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  my-[1vw]">
                 {" "}
                 <IoArrowForward className="mr-[.5vw] " />
                 ntrary to popular belief, Lorem Ipsum is not simply random text
@@ -156,6 +159,53 @@ const Portfolio = () => {
           <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
 
           {/* related evenets */}
+
+          <div className="  lg:hidden border border-t-[4px] border-t-purple-800  w-[60vw] h-[40vw] bg-[#F5F5F5] my-[5vw]">
+            <div className="flex justify-around items-center  py-[.7vw]">
+              <p className="text-black text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-semibold mx-[1vw]">
+                Creative Director{" "}
+              </p>
+              <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1vw] text-gray-600">
+                David Copper
+              </p>
+            </div>
+            <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
+            <div className="flex  justify-around  items-center  py-[.7vw]">
+              <p className="text-black  text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-semibold mx-[1vw]">
+                Category{" "}
+              </p>
+              <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1vw] text-gray-600">
+                Kids birthday party
+              </p>
+            </div>
+            <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
+            <div className="flex  justify-around  items-center  py-[.7vw]">
+              <p className="text-black  text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-semibold mx-[1vw]">
+                Date{" "}
+              </p>
+              <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1vw] text-gray-600">
+                09th September 2023
+              </p>
+            </div>
+            <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
+            <div className="flex  justify-around  items-center  py-[.7vw]">
+              <p className="text-black  text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-semibold mx-[1vw]">
+                Location{" "}
+              </p>
+              <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1vw] text-gray-600">
+                27 Marion street columbia
+              </p>
+            </div>
+            <div className="h-[.05vw] w-full bg-gray-500  my-[1vw]"></div>
+            <div className="flex  justify-around  items-center  py-[.7vw]">
+              <p className="text-black text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-semibold mx-[1vw]">
+                Customer{" "}
+              </p>
+              <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1vw] text-gray-600">
+                ThemeForest Envato
+              </p>
+            </div>
+          </div>
 
           <div className="w-full">
             <div className="text-black text-[2vw] font-bold my-[1vw]">
@@ -182,11 +232,13 @@ const Portfolio = () => {
                   <div className="flex flex-col items-center  py-[.5vw]">
                     <Link
                       to={`/portfolio/${items.id}`}
-                      className="text-black text-[1.2vw]"
+                      className="text-black text-[4vw]   sm:text-[3vw]  md:text-[1.5vw] "
                     >
                       {items.title}
                     </Link>
-                    <p className="text-gray-400 text-[1vw]">private party</p>
+                    <p className="text-gray-400 text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] ">
+                      private party
+                    </p>
                   </div>
                 </div>
               ))}
