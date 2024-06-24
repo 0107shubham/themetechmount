@@ -74,7 +74,7 @@ const TeamDetails = () => {
               <p className=" text-[7vw] sm:text[5vw]  md:text-[4vw] text-black font-bold">
                 Raymond turner
               </p>
-              <p className="  text-[3vw] sm:text[2vw]  md:text-[1vw] text-gray-600">
+              <p className="  text-[2vw] sm:text[2vw]  md:text-[1vw] text-gray-600">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
                 ipsum viverra maecenas accumsan lacus vel facilisis.
@@ -235,7 +235,7 @@ const TeamDetails = () => {
               <div className="w-full grid grid-cols-2 gap-[1vw]  my-[3vw] ">
                 {cardData.map((card) => (
                   <div className="bg-[#F5F5F5] shadow-md rounded-md ">
-                    <h3 className="text-xl w-fit font-bold text-gray-700 bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] px-[.2vw] rounded-b-[.5vw] rounded-r-[1vw]">
+                    <h3 className=" text-[2.5vw]   sm:text-[2.4vw]  md:text-[1.5vw]  w-fit font-bold text-gray-700 bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6] px-[.2vw] rounded-b-[.5vw] rounded-r-[1vw]">
                       {card.id}
                     </h3>
                     <div className="ml-[2.5vw] py-[1vw]">
@@ -253,7 +253,6 @@ const TeamDetails = () => {
           </div>
         </div>
       </div>
-      z
     </div>
   );
 };
