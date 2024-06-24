@@ -57,7 +57,7 @@ const TeamDetails = () => {
         <Navigation />
       </div>
       <div className="w-full py-[4vw] px-[6vw]">
-        <div className="w-full grid grid-cols-2 gap-[2vw] bg-gray-100 p-[4vw] ">
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-[2vw] bg-gray-100 p-[4vw] ">
           <div className="w-full">
             <img
               src="https://res.cloudinary.com/drvjsegeb/image/upload/v1718113404/et3_f6lsqr.jpg"
@@ -68,9 +68,13 @@ const TeamDetails = () => {
 
           <div className="w-full">
             <div className="w-full">
-              <p className="text-[1vw] text-gray-600">Cleaner Head</p>
-              <p className="text-[4vw] text-black font-bold">Raymond turner</p>
-              <p className="text-[1vw] text-gray-600">
+              <p className="text-[4vw] sm:text[3vw] md:text-[2vw] text-gray-600">
+                Cleaner Head
+              </p>
+              <p className=" text-[7vw] sm:text[5vw]  md:text-[4vw] text-black font-bold">
+                Raymond turner
+              </p>
+              <p className="  text-[3vw] sm:text[2vw]  md:text-[1vw] text-gray-600">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
                 ipsum viverra maecenas accumsan lacus vel facilisis.
@@ -79,53 +83,53 @@ const TeamDetails = () => {
             <div className="grid grid-cols-2">
               <div className="flex  items-center my-[2vw] mx-[.2vw] ">
                 <div className="bg-[white] w-fit h-fit p-[.7vw] border-gray-400 border-[.04vw] mr-[.5vw]">
-                  <FaPhone className="text-[1.5vw]" />
+                  <FaPhone className=" text-[4vw]   sm:text-[3vw] md:text-[1.5vw] " />
                 </div>
                 <div>
                   {" "}
-                  <p className="text-black text-[1.5vw] font-semibold font-mono leading-none">
+                  <p className="text-black  text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw] font-semibold font-mono leading-none">
                     Phone :
                   </p>
-                  <p className="text-gray-600 text-[1.2vw] font-normal font-mono hover:text-purple-300">
+                  <p className="text-gray-600  text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-normal font-mono hover:text-purple-300">
                     +91 (234)(4567)(890)
                   </p>
                 </div>
               </div>
               <div className="flex  items-center my-[2vw] mx-[.2vw] ">
                 <div className="bg-[white] w-fit h-fit p-[.7vw]  border-gray-400  border-[.04vw] mr-[.5vw]">
-                  <IoMailOutline className="text-[1.5vw]" />
+                  <IoMailOutline className=" text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw] " />
                 </div>
                 <div>
-                  <p className="text-black text-[1.5vw] font-semibold font-mono leading-none">
+                  <p className="text-black text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw]  font-semibold font-mono leading-none">
                     Email :
                   </p>
-                  <p className="text-gray-600 text-[1.2vw] font-normal font-mono hover:text-purple-300">
+                  <p className="text-gray-600 text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw] font-normal font-mono hover:text-purple-300">
                     sale@themetechmount.com
                   </p>
                 </div>
               </div>
               <div className="flex  items-center my-[2vw] mx-[.2vw] ">
                 <div className="bg-[white] w-fit h-fit p-[.7vw]  border-gray-400  border-[.04vw] mr-[.5vw]">
-                  <TfiWorld className="text-[1.5vw]" />
+                  <TfiWorld className=" text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw] " />
                 </div>
                 <div>
-                  <p className="text-black text-[1.5vw] font-semibold font-mono leading-none">
+                  <p className="text-black  text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw]  font-semibold font-mono leading-none">
                     Website :
                   </p>
-                  <p className="text-gray-600 text-[1.2vw] font-normal font-mono hover:text-purple-300">
+                  <p className="text-gray-600 text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  font-normal font-mono hover:text-purple-300">
                     www.example.com
                   </p>
                 </div>
               </div>
               <div className="flex  items-center my-[2vw] mx-[.2vw] ">
                 <div className="bg-[white] w-fit h-fit p-[.7vw]  border-gray-400  border-[.04vw] mr-[.5vw]">
-                  <IoMdPerson className="text-[1.5vw]" />
+                  <IoMdPerson className=" text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw] " />
                 </div>
                 <div>
-                  <p className="text-black text-[1.5vw] font-semibold font-mono leading-none">
+                  <p className="text-black  text-[3.5vw]   sm:text-[3vw] md:text-[1.5vw]  font-semibold font-mono leading-none">
                     Experiance :
                   </p>
-                  <p className="text-gray-600 text-[1.2vw] font-normal font-mono hover:text-purple-300">
+                  <p className="text-gray-600  text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  font-normal font-mono hover:text-purple-300">
                     More Than 10 Years
                   </p>
                 </div>
@@ -159,7 +163,7 @@ const TeamDetails = () => {
           <div className="text-[4vw] text-black font-bold">
             PERSONAL BIOGRAPHY
           </div>
-          <div className="text-[1vw] text-gray-600">
+          <div className=" text-[2vw]   sm:text-[2vw]  md:text-[1.2vw]  text-gray-600">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
             ipsum suspendisse ultrices gravida. Risus commodo suspendisse
@@ -168,11 +172,11 @@ const TeamDetails = () => {
             accumsan lacus vel facilisis. accumsan lacus vel facilisis.
           </div>
           <div className="w-full my-[2vw]">
-            <ul className=" grid grid-cols-3 list-inside space-y-2 w-full ">
+            <ul className=" grid grid-cols-1 md:grid-cols-3 list-inside space-y-2 w-full ">
               {statements.map((statement, index) => (
                 <li
                   key={index}
-                  className="text-[1.2vw] font-semibold w-full text-gray-800 flex items-center "
+                  className=" text-[3vw]   sm:text-[2.5vw]  md:text-[1.2vw]  font-semibold w-full text-gray-800 flex items-center "
                 >
                   <FaAngleDoubleRight className="mr-[1vw]" /> {"  "}
                   {statement}
@@ -181,15 +185,15 @@ const TeamDetails = () => {
             </ul>
           </div>
 
-          <div className="w-full grid grid-cols-2 gap-[1vw]">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-[1vw]">
             <div className="w-full">
               <div>
-                <p className="text-[2vw] text-black font-bold">
+                <p className="text-[4vw] sm:text[3vw] md:text-[2vw] text-black font-bold">
                   PROFESSIONAL SKILLS
                 </p>
                 {/* horizonatal line */}
                 <div className="h-[.1vw] w-full bg-gray-500  my-[2.2vw]"></div>
-                <p className="text-[1vw] text-gray-600  my-[2.2vw]">
+                <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1.2vw]  text-gray-600  my-[2.2vw]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod viv erra maecenas accumsan lacus vel facilisis.
                 </p>
@@ -217,12 +221,12 @@ const TeamDetails = () => {
 
             <div className="w-full">
               <div className="w-full">
-                <p className="text-[2vw] text-black font-bold">
+                <p className="text-[4vw] sm:text[3vw] md:text-[2vw] text-black font-bold">
                   EDUCATIONAL QUALIFICATION
                 </p>
 
                 <div className="h-[.1vw] w-full bg-gray-500  my-[2.2vw]"></div>
-                <p className="text-[1vw] text-gray-600  my-[2.2vw]">
+                <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1.2vw]  text-gray-600  my-[2.2vw]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod viv erra maecenas accumsan lacus vel facilisis.
                 </p>
@@ -235,10 +239,10 @@ const TeamDetails = () => {
                       {card.id}
                     </h3>
                     <div className="ml-[2.5vw] py-[1vw]">
-                      <h2 className="text-[1.5vw] font-semibold text-gray-800">
+                      <h2 className=" text-[2.5vw]   sm:text-[2.4vw]  md:text-[1.5vw]  font-semibold text-gray-800">
                         {card.title}
                       </h2>
-                      <p className="text-[1.1vw]  text-gray-600">
+                      <p className=" text-[2vw]   sm:text-[2vw]  md:text-[1.2vw]  text-gray-600">
                         {card.period}
                       </p>
                     </div>
