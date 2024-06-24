@@ -70,7 +70,7 @@ const Portfolio = () => {
             </div>
           </div>
 
-          <div className="w-[65%]  my-[1vw] ">
+          <div className="w-full lg:w-[65%]  my-[1vw] ">
             <p className=" text-[5vw] sm:text[3vw]  md:text-[4vw] font-semibold  my-[1vw] ">
               FORRIGN EXCHANGE
             </p>

@@ -24,7 +24,9 @@ const BlogDetails = () => {
       <div className="w-full px-[6px] md:px-[21vw] py-[5vw] ">
         {/* Comment Section */}
         <div className="mb-8 bg-[#F5F5F5]">
-          <p>{filteredData.Name}</p>
+          <p className="text-[4vw]   sm:text-[5vw]  md:text-[3vw] font-bold">
+            {filteredData.Name}
+          </p>
           {filteredData.imageUrl && (
             <img
               src={filteredData.imageUrl}
