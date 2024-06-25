@@ -11,6 +11,7 @@ import BlogClassic from "./BlogClassic";
 import EventsDetails from "./EventsDetails";
 import AllEvents from "./AllEvents";
 import EventGallery from "./EventGallery";
+import { GoArrowUpRight } from "react-icons/go";
 import MarqueBoxComponent from "./MarqueBoxComponent";
 
 const Home = () => {
@@ -35,8 +36,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="text-center hidden sm:block py-[1.3vw] font-medium bg-gradient-to-r uppercase from-[#9FF0BA] to-purple-600">
-        10:00 - 12:00 - THE WORLD OF BLUES - ASTHON PORTER - BANGLADESH
+      <div className="text-center hidden lg:flex justify-center items-center py-[1.3vw] font-medium bg-gradient-to-r uppercase from-[#9FF0BA] to-purple-600">
+        10:00 - 12:00 - THE WORLD OF BLUES - ASTHON PORTER - BANGLADESH{" "}
+        <GoArrowUpRight className="mx-[1vw] text-[2vw]" />
       </div>
       <div className="w-full h-[100vh] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
         <div

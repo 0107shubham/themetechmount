@@ -42,6 +42,9 @@ const AboutUs = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">About Us</p>
+      </div>
       <div className="w-full grid grid-cols-2 pt-[2vw]">
         <div className="">
           <p>WELCOME TO</p>

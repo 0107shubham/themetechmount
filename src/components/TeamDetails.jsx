@@ -56,6 +56,9 @@ const TeamDetails = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Team Details</p>
+      </div>
       <div className="w-full py-[4vw] px-[6vw]">
         <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-[2vw] bg-gray-100 p-[4vw] ">
           <div className="w-full">

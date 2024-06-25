@@ -85,6 +85,9 @@ const Checkout = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Checkout</p>
+      </div>
       <div className="w-full flex flex-col lg:flex-row gap-4  px-[5vw]">
         <div className="bg-purple-200  w-full lg:w-[66%]">
           <div className="p-[3vw] bg-gray-100 min-h-screen flex flex-col items-center">

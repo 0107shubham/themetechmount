@@ -62,6 +62,10 @@ const Services = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Services</p>
+      </div>
+
       <div className="grid grid-cols-2">
         <div className="w-full">
           <p className="text-[8px] sm:text-[10px]  lg:text-[1vw] text-black">

@@ -8,6 +8,7 @@ import { imagesGallery } from "../Data";
 import { Link, useNavigate } from "react-router-dom";
 import { cartState } from "../state/cartState";
 import { useRecoilValue } from "recoil";
+import { MdOutlineCalendarViewMonth } from "react-icons/md";
 
 const platforms = [
   { id: 1, name: "Instagram" },
@@ -23,6 +24,11 @@ const Navigation = () => {
   const [isPortfolioVisible, setIsPortfolioVisible] = useState(false);
   const [isBlogVisible, setIsBlogVisible] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  // const toggleDrawer = () => {
+  //   setIsDrawerOpen(!isDrawerOpen);
+  // };
   const cartvalue = useRecoilValue(cartState);
 
   const cartvalueLength = cartvalue.length;
@@ -322,123 +328,162 @@ const Navigation = () => {
 
         {/* support */}
         <div className="flex items-center  mx-2">
-          <div className="  border-r-2 border-gray-400">
+          <div className="   border-gray-400">
             <p className="text-[1vw]">Support center</p>
-            <p>+123 456 7890</p>
+            <p className="text-[1.5vw]">+123 456 7890</p>
           </div>
+          <div className="w-[1px] h-[8vw] mx-[1vw] bg-gray-600"></div>
           <div className="flex items-center ">
-            <div onClick={handleCart}>
+            {/* <div onClick={handleCart}>
               <IoCart size={24} />
               <p>{cartvalueLength}</p>
+            </div> */}
+            <div className="relative cursor-pointer mx-[1vw] ">
+              <IoCart className=" text-[2.5vw] " onClick={handleCart} />
+              {cartvalueLength === 0 ? (
+                ""
+              ) : (
+                <p className="bg-purple-400 right-[1.2vw] top-[1.6vw]   flex justify-center items-center text-[1.5vw]  absolute w-[2vw] h-[2vw]   rounded-full">
+                  {cartvalueLength}
+                </p>
+              )}
             </div>
-            <div>
-              <IoIosSearch size={24} />
-            </div>
+            <div className="relative   h-[8vw] flex items-center">
+              {isSearchOpen ? (
+                <RxCross2
+                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  className="text-white   cursor-pointer  text-[2.5vw]"
+                />
+              ) : (
+                <IoIosSearch
+                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  className="text-white  cursor-pointer   text-[2.5vw]"
+                />
+              )}
 
-            {/* navigation  */}
-
-            <div className="flex  items-center justify-center cursor-pointer">
-              <Button onClick={() => setIsOpen(true)}>
-                {isNavVisible ? (
-                  <RxCross2 size={24} />
-                ) : (
-                  <GiHamburgerMenu size={24} />
-                )}
-              </Button>
-            </div>
-            <Drawer
-              className="h-full hidden  bg-black min-w-full space-x-0 ml-0"
-              open={isOpen}
-              onClose={handleClose}
-              position="top"
-            >
-              <div
-                onClick={handleClose}
-                className=" w-full h-[4vw] flex justify-end items-center text-right "
-              >
-                <RxCross2 className="text-[2vw] cursor-pointer" />
-              </div>
-              <Drawer.Items>
-                <div className="flex gap-2 my-[2vw] px-[10vw]">
-                  <div className="w-[60%] ">
-                    <div className="">
-                      <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
-                        PRESENTUP
-                      </p>
-                      <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit, sed do eiusmod tempor incididunt ut asdlabore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis
-                        nostrud .
-                        <span className="underline text-white">Read More</span>{" "}
-                      </p>
-                      <p className="mt-[2vw] text-white text-[1.5vw] font-medium tracking-widest	">
-                        WE ARE AVAILABLE
-                      </p>
-                      <p className="my-[1vw] text-gray-400 text-[1.2vw] font-medium tracking-wider	">
-                        Mon-Sat: 09.00 am to 6.30 pm / Sunday close
-                      </p>
-                    </div>
-
-                    <div className="w-full h-[.1vw] bg-gray-500 my-[2vw]"></div>
-
-                    <div className="flex flex-wrap mx-2 mt-4 ">
-                      {requiredImage.map((image, index) => (
-                        <div
-                          key={`${image.id}-${index}`}
-                          className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4"
-                        >
-                          <img
-                            src={image.url}
-                            alt={`Gallery Image ${image.id}`}
-                            className="w-full h-auto object-cover"
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="w-[.1vw] min-h-full bg-gray-500 mx-[.2vw]"></div>
-                  <div className="">
-                    <div>
-                      <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
-                        PHONE
-                      </p>
-                      <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
-                        + 96 123 456 7890
-                      </p>
-                      <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
-                        EMAIL
-                      </p>
-                      <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
-                        Mail1: info.support@domain.com
-                      </p>
-                      <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
-                        LOCATION
-                      </p>
-                      <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
-                        405 main Bolins Stret New Jersey Town Road KY 7007
-                      </p>
-                      <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
-                        SOCIAL LINKS
-                      </p>
-                      <div className="flex flex-col ">
-                        {platforms.map((platform) => (
-                          <div
-                            key={platform.id}
-                            className="my-[.2vw] text-gray-400 text-[1vw] font-medium tracking-wider	"
-                          >
-                            {platform.name}
-                          </div>
-                        ))}
+              {isSearchOpen && (
+                <div className="bg-white absolute   cursor-pointer px-[1vw]  z-40 right-full top-full  w-[30vw] ">
+                  <div className="text-white  text-[1.2vw] font-medium  my-[2vw]">
+                    <div className=" flex">
+                      <input
+                        type="search"
+                        placeholder="Type Word Then Enter"
+                        className=" bg-gray-200 w-full text-[1.5vw]"
+                      />
+                      <div className="bg-purple-500">
+                        <IoIosSearch className="text-black cursor-pointer my-[.5vw]   text-[2vw]" />
                       </div>
                     </div>
                   </div>
                 </div>
-              </Drawer.Items>
-            </Drawer>
-
-            {/* drawer */}
+              )}
+            </div>
           </div>
+          {/* navigation  */}
+
+          <div className="flex  items-center justify-center cursor-pointer">
+            <Button
+              className="bg-transparent focus:border-none"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              {isNavVisible ? (
+                <RxCross2 size={24} />
+              ) : (
+                <MdOutlineCalendarViewMonth className="text-white   text-[2.5vw]" />
+              )}
+            </Button>
+          </div>
+          <Drawer
+            className="bg-black"
+            open={isOpen}
+            onClose={handleClose}
+            position="top"
+          >
+            <div
+              onClick={handleClose}
+              className="bg-black w-full h-[4vw] flex justify-end items-center text-right "
+            >
+              <RxCross2 className="text-[2vw] text-white cursor-pointer" />
+            </div>
+            <Drawer.Items>
+              <div className="flex gap-2 my-[2vw] px-[10vw] bg-black">
+                <div className="w-[60%] ">
+                  <div className="">
+                    <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
+                      PRESENTUP
+                    </p>
+                    <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut asdlabore et dolore
+                      magna aliqua. Ut enim ad minim veniam, quis nostrud .
+                      <span className="underline text-white">Read More</span>{" "}
+                    </p>
+                    <p className="mt-[2vw] text-white text-[1.5vw] font-medium tracking-widest	">
+                      WE ARE AVAILABLE
+                    </p>
+                    <p className="my-[1vw] text-gray-400 text-[1.2vw] font-medium tracking-wider	">
+                      Mon-Sat: 09.00 am to 6.30 pm / Sunday close
+                    </p>
+                  </div>
+
+                  <div className="w-full h-[.1vw] bg-gray-500 my-[2vw]"></div>
+
+                  <div className="flex flex-wrap mx-2 mt-4 ">
+                    {requiredImage.map((image, index) => (
+                      <div
+                        key={`${image.id}-${index}`}
+                        className="w-full sm:w-1/2 lg:w-1/3 px-2 mb-4"
+                      >
+                        <img
+                          src={image.url}
+                          alt={`Gallery Image ${image.id}`}
+                          className="w-full h-auto object-cover"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="w-[.1vw] min-h-full bg-gray-500 mx-[.2vw]"></div>
+                <div className="">
+                  <div>
+                    <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
+                      PHONE
+                    </p>
+                    <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
+                      + 96 123 456 7890
+                    </p>
+                    <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
+                      EMAIL
+                    </p>
+                    <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
+                      Mail1: info.support@domain.com
+                    </p>
+                    <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
+                      LOCATION
+                    </p>
+                    <p className="my-[1vw] text-gray-400 text-[1vw] font-medium tracking-wider	">
+                      405 main Bolins Stret New Jersey Town Road KY 7007
+                    </p>
+                    <p className="my-[1vw] text-[2vw] font-medium tracking-wider	">
+                      SOCIAL LINKS
+                    </p>
+                    <div className="flex flex-col ">
+                      {platforms.map((platform) => (
+                        <div
+                          key={platform.id}
+                          className="my-[.2vw] text-gray-400 text-[1vw] font-medium tracking-wider	"
+                        >
+                          {platform.name}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Drawer.Items>
+          </Drawer>
+
+          {/* drawer */}
         </div>
       </div>
     </div>

@@ -8,6 +8,9 @@ const ContactUs = () => {
       <div className="w-full bg-black">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Contact us</p>
+      </div>
       <div className=" w-full grid grid-cols-1 md:grid-cols-2 px-[5vw] gap-[2vw] mt-[4vw] mb-[6vw] sm:px-[7vw]">
         <div className="">
           <div className="bg-white hidden  relative w-[90%] aspect-square pb-[5vw]  lg:flex flex-col pt-[5vw] justify-start items-center rounded-full ">

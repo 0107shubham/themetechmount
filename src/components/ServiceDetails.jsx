@@ -10,6 +10,9 @@ const ServiceDetails = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Service Details</p>
+      </div>
       <div className="w-full px-[4vw] md:px-[20vw] py-[4vw]">
         <div className="w-full flex justify-end items-end   h-[34vw]  bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717936085/post-image-002-780x590_biw6qa.jpg')]">
           <div className="bg-[#F7F7F7] flex   w-[30vw] h-[10vw] pt-[1.5vw]">

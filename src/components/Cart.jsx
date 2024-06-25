@@ -79,6 +79,9 @@ const Cart = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Cart</p>
+      </div>
 
       {totalProductIncart > 0 ? (
         <div className="p-6  min-h-screen w-full h-fit">
@@ -137,7 +140,7 @@ const Cart = () => {
                           </span>
                         )}
                       </td>
-                      <td className="px-[1vw]   h-[5vw] mt-[.7vw] w-[5vw]  text-black flex items-center border-[.1vw] border-gray-600 group  text-[20px] mg:text-[1.8vw]  ">
+                      <td className="px-[1vw]   h-[4vw] mt-[.7vw] w-[7vw]  text-black flex items-center border-[.1vw] border-gray-600 group  text-[20px] mg:text-[1.8vw]  ">
                         {quantities[index]}
                         <span className="flex flex-col ">
                           <IoMdArrowDropup

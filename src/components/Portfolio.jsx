@@ -20,6 +20,9 @@ const Portfolio = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Projects</p>
+      </div>
       <div className="w-full">
         <div className="relative w-full py-[4vw] px-[7vw]">
           <div className="w-full">

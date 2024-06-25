@@ -73,6 +73,9 @@ const BlogClassic = () => {
       <div className="bg-black w-full">
         <Navigation />
       </div>
+      <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
+        <p className="uppercase text-[5vw] text-white">Blogs</p>
+      </div>
       <div className="w-full px-[4vw] sm:px-[18vw]">
         {BlogsData.map((article) => (
           <div key={article.id} className="mb-[1vw]   ">
