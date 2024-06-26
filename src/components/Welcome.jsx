@@ -14,10 +14,10 @@ const Welcome = () => {
             <p className="text-[8px] sm:text-[14px] md:text-[1.5vw]">
               WELCOME TO PRESENTUP
             </p>
-            <p className="text-[18px]  sm:text-[17px]  md:text-[2.5vw] whitespace-normal  font-semibold sm:font-bold">
+            <p className="text-[12px]  sm:text-[17px]  md:text-[2.5vw] whitespace-normal  font-bold sm:font-bold">
               WITH OUR PASSION KNOWLEDGE CREATIV FLAIR INSPIRATION.
             </p>
-            <p className="text-[14px] md:text-[1.2vw]  sm:text-[14px]  mt-[1vw] whitespace-normal text-gray-700">
+            <p className="text-[12px] md:text-[1.2vw]  sm:text-[14px]  mt-[1vw] whitespace-normal text-gray-700">
               We have a huge range of suppliers and contacts in the industry
               that work closely with us to not only ensure you get the wedding
               day.
@@ -25,12 +25,12 @@ const Welcome = () => {
           </div>
           <div className="flex flex-col text-gray-700 text-[12px]  sm:text-[10px]  font-medium mt-[10px] md:text-[1.2vw] sm:my-[.8vw] md:my-[1.2vw]">
             <div className="flex flex-col sm:flex-row">
-              <p className="">SUN-THU:3 PM-2AM</p>
-              <p className="sm:mx-[1.2vw]">MON-THU:3 PM-2AM</p>
+              <p className="my-[2px]">SUN-THU:3 PM-2AM</p>
+              <p className="sm:mx-[1.2vw] my-[2px]">MON-THU:3 PM-2AM</p>
             </div>
             <div className="flex flex-col sm:flex-row ">
-              <p className="">SUN-THU:3 PM-2AM</p>
-              <p className="sm:mx-[1.2vw]">MON-THU:3 PM-2AM</p>
+              <p className="my-[2px]">SUN-THU:3 PM-2AM</p>
+              <p className="sm:mx-[1.2vw] my-[2px]">MON-THU:3 PM-2AM</p>
             </div>
           </div>
           <div>

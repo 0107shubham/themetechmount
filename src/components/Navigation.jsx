@@ -363,15 +363,15 @@ const Navigation = () => {
 
               {isSearchOpen && (
                 <div className="bg-white absolute   cursor-pointer px-[1vw]  z-40 right-full top-full  w-[30vw] ">
-                  <div className="text-white  text-[1.2vw] font-medium  my-[2vw]">
+                  <div className="  text-[1.2vw] font-medium  my-[2vw]">
                     <div className=" flex">
                       <input
                         type="search"
                         placeholder="Type Word Then Enter"
-                        className=" bg-gray-200 w-full text-[1.5vw]"
+                        className=" bg-gray-200 w-full text-gray-900 text-[1.5vw]"
                       />
-                      <div className="bg-purple-500">
-                        <IoIosSearch className="text-black cursor-pointer my-[.5vw]   text-[2vw]" />
+                      <div className="bg-purple-200">
+                        <IoIosSearch className="text-black cursor-pointer my-[.5vw]   text-[1.8vw]" />
                       </div>
                     </div>
                   </div>
