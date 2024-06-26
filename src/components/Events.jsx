@@ -107,7 +107,7 @@ const Events = () => {
               to={`/eventsDetails/${item.id}`}
               className="border-black border-[.2vw] rounded-full p-[2.5vw]    hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
             >
-              <p>
+              <p className="text-[14px]">
                 <GoArrowUpRight />
               </p>
             </Link>
