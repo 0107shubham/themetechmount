@@ -9,6 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { cartState } from "../state/cartState";
 import { useRecoilValue } from "recoil";
 import { MdOutlineCalendarViewMonth } from "react-icons/md";
+import { IoIosArrowDown } from "react-icons/io";
 
 const platforms = [
   { id: 1, name: "Instagram" },
@@ -47,10 +48,6 @@ const Navigation = () => {
 
   const navigate = useNavigate();
 
-  const handleNavigation = () => {
-    navigate("/cart");
-  };
-
   const handleCart = () => {
     navigate("/cart");
   };
@@ -81,6 +78,9 @@ const Navigation = () => {
   const handleShop = () => {
     navigate("/shop");
   };
+  const handleSearch = () => {
+    navigate("/search");
+  };
 
   return (
     <div onClick={handleButtonClick} className="w-full">
@@ -102,12 +102,47 @@ const Navigation = () => {
               </p>
             )}
           </div>
-          <div>
+          {/* <div>
             <IoIosSearch className=" text-[6vw] cursor-pointer sm:text-[4vw]" />
+          </div> */}
+          <div className="relative   h-[8vw] flex items-center">
+            {isSearchOpen ? (
+              <RxCross2
+                onClick={() => setIsSearchOpen(!isSearchOpen)}
+                className="text-white   cursor-pointer   text-[6vw] sm:text-[4vw]"
+              />
+            ) : (
+              <IoIosSearch
+                onClick={() => {
+                  setIsSearchOpen(!isSearchOpen);
+                }}
+                className="text-white  cursor-pointer    text-[6vw] sm:text-[4vw]"
+              />
+            )}
+
+            {isSearchOpen && (
+              <div className="bg-white absolute   cursor-pointer px-[3vw]  z-40 right-full top-full  w-[50vw] ">
+                <div className="  text-[1.2vw] font-medium  my-[2vw]">
+                  <div className=" flex">
+                    <input
+                      type="search"
+                      placeholder="Type Word Then Enter"
+                      className=" bg-gray-200 w-full text-gray-900 text-[3vw]"
+                    />
+                    <div className="bg-purple-200 flex items-center">
+                      <IoIosSearch
+                        onClick={handleSearch}
+                        className="text-black cursor-pointer my-[.5vw]   text-[6vw]"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           <div
             onClick={() => setIsNavVisible(!isNavVisible)}
-            className="cursor-pointer  text-[6vw] sm:text-[4vw]"
+            className="cursor-pointer  text-[6vw] sm:text-[4vw] mr-3"
           >
             {isNavVisible ? <RxCross2 /> : <GiHamburgerMenu />}
           </div>
@@ -267,8 +302,8 @@ const Navigation = () => {
               </Link>
             </li>
             <li className=" relative group flex flex-col justify-center  h-[8vw] ">
-              <p className="text-white  hover:underline hover:text-purple-500  pl-[1.5vw]">
-                Pages
+              <p className="text-white flex items-center hover:underline hover:text-purple-500  pl-[1.5vw]">
+                Pages <IoIosArrowDown />
               </p>
               <div className="bg-black absolute  cursor-pointer   z-40  left-0 top-full hidden group-hover:block w-[20vw] pl-[2vw]">
                 <div className="text-white  hover:underline text-[1.2vw] font-medium hover:text-purple-500 my-[.8vw]">
@@ -287,8 +322,8 @@ const Navigation = () => {
               </div>
             </li>
             <li className="   relative group flex flex-col justify-center  h-[8vw]">
-              <p className="text-white cursor-pointer  hover:underline hover:text-purple-500 pl-[1.5vw]">
-                Portfolio
+              <p className="text-white cursor-pointer  flex items-center   hover:underline hover:text-purple-500 pl-[1.5vw]">
+                Portfolio <IoIosArrowDown />
               </p>
               <div className="bg-black absolute left-0 z-40  top-full hidden group-hover:block w-[20vw] pl-[2vw]">
                 <div className="text-white text-[1.2vw]  cursor-pointer  font-medium hover:text-purple-500 my-[.5vw]">
@@ -297,8 +332,8 @@ const Navigation = () => {
               </div>
             </li>
             <li className="  relative group flex flex-col justify-center h-[8vw]">
-              <p className="text-white cursor-pointer hover:underline hover:text-purple-500 pl-[1.5vw]">
-                Blog
+              <p className="text-white cursor-pointer   flex items-center  hover:underline hover:text-purple-500 pl-[1.5vw]">
+                Blog <IoIosArrowDown />
               </p>
               <div className="bg-black absolute cursor-pointer z-40 left-0 top-full hidden group-hover:block w-[20vw]  pl-[2vw]">
                 <div className="text-white text-[1.2vw]  font-medium hover:text-purple-500 my-[.5vw]">
@@ -318,7 +353,7 @@ const Navigation = () => {
                 Contact Us
               </p>
             </div>
-            <div className="  cursor-pointer   cursor-pointer     flex flex-col justify-center  h-[8vw]  ">
+            <div className="  cursor-pointer        flex flex-col justify-center  h-[8vw]  ">
               <div className="text-white hover:underline hover:text-purple-500 pl-[1.5vw]">
                 <p onClick={handleShop}>Shop</p>{" "}
               </div>
@@ -356,7 +391,9 @@ const Navigation = () => {
                 />
               ) : (
                 <IoIosSearch
-                  onClick={() => setIsSearchOpen(!isSearchOpen)}
+                  onClick={() => {
+                    setIsSearchOpen(!isSearchOpen);
+                  }}
                   className="text-white  cursor-pointer   text-[2.5vw]"
                 />
               )}
@@ -371,7 +408,10 @@ const Navigation = () => {
                         className=" bg-gray-200 w-full text-gray-900 text-[1.5vw]"
                       />
                       <div className="bg-purple-200">
-                        <IoIosSearch className="text-black cursor-pointer my-[.5vw]   text-[1.8vw]" />
+                        <IoIosSearch
+                          onClick={handleSearch}
+                          className="text-black cursor-pointer my-[.5vw]   text-[1.8vw]"
+                        />
                       </div>
                     </div>
                   </div>

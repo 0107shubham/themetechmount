@@ -52,19 +52,27 @@ const Home = () => {
           <Navigation />
         </div>
 
-        <div className="flex justify-center items-center w-full h-full">
-          <div className="text-white flex flex-col font-bold leading-none">
-            <p className="text-[8vw] leading-none">
+        <div className=" w-full h-[60vh] flex flex-col justify-center">
+          <div className="text-white flex flex-col justify-center font-bold leading-none">
+            <p className="text-[8vw]  leading-none flex justify-center">
               BUILD YOUR 🥳 <br />
             </p>
-            <div>
-              <p className="text-[8vw]">
-                <span className="text-[#9BF9B3] leading-none">EVENTS</span> THE{" "}
+            <div className="flex justify-center">
+              <p className="text-[8vw]   flex justify-center items-center">
+                <span className="text-[1.4vw]  line-clamp-3 w-[30vw]">
+                  Planning a Wedding , Corporate or Event in our busy city is
+                  not so easy,and it takes skills to makes it all look
+                  easy-going
+                </span>{" "}
+                <span className="text-[#9BF9B3] leading-none mx-[1vw]">
+                  EVENTS
+                </span>{" "}
+                THE{" "}
               </p>
             </div>
-            <div className="flex items-center">
+            <div className="flex justify-center items-center">
               <p className="text-[8vw] leading-none">EASY WAY</p>
-              <button className="text-white border-2 h-fit mx-[2vw] border-white hover:bg-purple-200">
+              <button className="text-white border  p-[.5vw] text-[1.5vw] h-fit mx-[2vw] border-white hover:bg-purple-200">
                 Buy Tickets
               </button>
             </div>

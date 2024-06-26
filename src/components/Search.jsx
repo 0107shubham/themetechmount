@@ -23,6 +23,10 @@ const Search = () => {
   const currentProducts = products.slice(0, 3);
   return (
     <div className="w-full bg-[#FBFBFC]">
+      <div className="bg-black w-full">
+        <Navigation />
+      </div>
+
       <div className="px-[8vw] my-[2vw]">
         <div className=" w-full grid grid-cols-1 sm:grid-cols-2 gap-[2vw]">
           <div className="">
@@ -33,16 +37,16 @@ const Search = () => {
               {pageResult.map((item) => (
                 <li
                   key={item.id}
-                  className="cursor-pointer flex items-center text-[1.4vw] font-semibold "
+                  className="cursor-pointer flex items-center text-[18px]  sm:text-[1.4vw] font-semibold "
                 >
-                  <MdOutlineTextSnippet className="text-purple-400 text-[1vw] mr-[.5vw] " />{" "}
+                  <MdOutlineTextSnippet className="text-purple-400 text-[18px] sm:text-[1vw] mr-[.5vw] " />{" "}
                   <span className="hover:text-purple-300">{item.name}</span>
                 </li>
               ))}
             </ul>
           </div>
           <div className="grid gap-3 ">
-            <p className="text-black text-[3vw] font-semibold mr-[.5vw] leading-none ">
+            <p className="text-black text-[22px] sm:text-[3vw] font-semibold mr-[.5vw] leading-none ">
               Post results
             </p>
             {BlogsData.map((blog) => (
@@ -50,14 +54,14 @@ const Search = () => {
                 <img
                   src={blog.imageUrl}
                   alt={blog.Name}
-                  className="w-[4vw] h-[4vw]"
+                  className="w-[8vw] h-[8vw] sm:w-[4vw] sm:h-[4vw]"
                 />
                 <div className="ml-[.5vw]">
-                  <h2 className="text-[1vw] text-gray-800 font-normal">
+                  <h2 className=" text-[14px] sm:text-[1vw]  text-gray-800 font-normal">
                     {blog.Name}
                   </h2>
 
-                  <p className="text-[1vw] text-gray-800 font-normal">
+                  <p className=" text-[14px] sm:text-[1vw]  text-gray-800 font-normal">
                     {blog.date}
                   </p>
                 </div>
@@ -71,7 +75,7 @@ const Search = () => {
         <button
           id="dropdownDefaultButton"
           data-dropdown-toggle="dropdown"
-          class="text-white bg-blue-700 group hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          class=" my-[4vw] sm:my-[2vw] text-white bg-blue-700 group hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           type="button"
         >
           Dropdown button{" "}
