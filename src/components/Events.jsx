@@ -93,10 +93,10 @@ const Events = () => {
 
           <div
             // hover:bg-[url(${item.imgUrl})]
-            className="flex  font-medium text-black group-hover:text-white  bg-cover justify-around items-center w-full min-h-[100%]   text-[2vw] "
+            className="flex  text-[14px] sm:text-[18px] md:text-[2vw]   font-medium text-black group-hover:text-white  bg-cover justify-around items-center w-full min-h-[100%]   "
             key={item.id}
           >
-            <p className="   pr-[2vw]">{item.time}</p>
+            <p className="pr-[2vw]">{item.time}</p>
             {/* <img src={item.imageURL} className="w-[4vw]" /> */}
             <div className="border-[.1vw] group-hover:text-white h-[80%] border-black"></div>
             <p className="  pr-[2vw]">{item.title}</p>
@@ -107,7 +107,7 @@ const Events = () => {
               to={`/eventsDetails/${item.id}`}
               className="border-black border-[.2vw] rounded-full p-[2.5vw]    hover:bg-gradient-to-r from-[#9FF0BA] to-[#C3A1F6]"
             >
-              <p className="text-[14px]">
+              <p className="">
                 <GoArrowUpRight />
               </p>
             </Link>
