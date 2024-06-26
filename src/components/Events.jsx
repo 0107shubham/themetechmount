@@ -93,7 +93,7 @@ const Events = () => {
 
           <div
             // hover:bg-[url(${item.imgUrl})]
-            className="flex  text-[14px] sm:text-[18px] md:text-[2vw]   font-medium text-black group-hover:text-white  bg-cover justify-around items-center w-full min-h-[100%]   "
+            className="flex  text-[3vw] sm:text-[18px] md:text-[2vw]   font-medium text-black group-hover:text-white  bg-cover justify-around items-center w-full min-h-[100%]   "
             key={item.id}
           >
             <p className="pr-[2vw]">{item.time}</p>
