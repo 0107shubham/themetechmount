@@ -1,8 +1,13 @@
 import React from "react";
-
+import { motion } from "framer-motion";
 const TicketBooking = () => {
   return (
-    <div className="w-full flex flex-col  justify-center ">
+    <motion.div
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="w-full flex flex-col  justify-center "
+    >
       <div className=" flex flex-col items-center w-full">
         <p className="text-[1.2vw] mt-[3vw]">OUR EVENTS</p>
         <p className="text-[3vw] mb-[1vw] font-bold">
@@ -43,7 +48,7 @@ const TicketBooking = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

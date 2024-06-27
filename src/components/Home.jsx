@@ -7,12 +7,10 @@ import Review from "./Review";
 import TicketBooking from "./TicketBooking";
 import Blogs from "./Blogs";
 import Instagram from "./Instagram";
-import BlogClassic from "./BlogClassic";
-import EventsDetails from "./EventsDetails";
-import AllEvents from "./AllEvents";
-import EventGallery from "./EventGallery";
+
 import { GoArrowUpRight } from "react-icons/go";
 import MarqueBoxComponent from "./MarqueBoxComponent";
+import { motion } from "framer-motion";
 
 const Home = () => {
   const [isNavbarSticky, setIsNavbarSticky] = useState(false);
@@ -36,9 +34,9 @@ const Home = () => {
 
   return (
     <div>
-      <div className="text-center hidden lg:flex justify-center items-center py-[1.3vw] font-medium bg-gradient-to-r uppercase from-[#9FF0BA] to-purple-600">
+      <div className="text-center flex justify-center items-center py-[1.3vw] font-medium bg-gradient-to-r uppercase from-[#9FF0BA] to-purple-600">
         10:00 - 12:00 - THE WORLD OF BLUES - ASTHON PORTER - BANGLADESH{" "}
-        <GoArrowUpRight className="mx-[1vw] text-[2vw]" />
+        <GoArrowUpRight className="mx-[1vw] texrt lg:text-[2vw]" />
       </div>
       <div className="w-full h-[100vh] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
         <div
@@ -52,7 +50,12 @@ const Home = () => {
           <Navigation />
         </div>
 
-        <div className=" w-full h-[60vh] flex flex-col justify-center">
+        <motion.div
+          className=" w-full h-[60vh] flex flex-col justify-center"
+          initial={{ opacity: 0, y: 200 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
           <div className="text-white flex flex-col justify-center font-bold leading-none">
             <p className="text-[8vw]  leading-none flex justify-center">
               BUILD YOUR 🥳 <br />
@@ -77,7 +80,7 @@ const Home = () => {
               </button>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
       <MarqueBoxComponent />
 

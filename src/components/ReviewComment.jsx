@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FaLongArrowAltUp, FaArrowDown } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 const ReviewComment = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -64,7 +65,12 @@ const ReviewComment = () => {
   };
 
   return (
-    <div className="w-full h-[50vw] sm:h-[30vw]  grid grid-cols-5">
+    <motion.div
+      className="w-full h-[50vw] sm:h-[30vw]  grid grid-cols-5"
+      initial={{ opacity: 0, y: 100 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+    >
       <div className="relative col-span-4 h-full overflow-hidden rounded-lg ">
         {CommentData.map((item, index) => (
           <div
@@ -115,7 +121,7 @@ const ReviewComment = () => {
           <FaArrowDown className=" text-[4vw] sm:text-[2vw]" />
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

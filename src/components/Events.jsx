@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GoArrowUpRight } from "react-icons/go";
-import { parse, format } from "date-fns";
+import { format } from "date-fns";
+import { motion } from "framer-motion";
 import { events } from "../Data";
 import "./Events.css";
 import { Link } from "react-router-dom";
@@ -66,11 +67,19 @@ const Events = () => {
   return (
     <div className="p-[2vw] bg-gray-200  ">
       <p className="text-black text-[1vw] font-bold mb-4">UPCOMING EVENTS</p>
-      <div className="  mb-[2vw]">
+      <motion.div
+        className="  mb-[2vw]"
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+      >
         <p className="text-black text-[3vw] font-bold">EVENT SCHEDULE</p>
-      </div>
+      </motion.div>
       {events.map((item) => (
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 150 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
           onMouseEnter={() => handleMouseEnter(item.id)}
           onMouseLeave={handleMouseLeave}
           key={item.id}
@@ -112,7 +121,7 @@ const Events = () => {
               </p>
             </Link>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );

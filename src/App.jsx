@@ -1,35 +1,46 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
-import Navigation from "./components/Navigation";
-import Home from "./components/Home";
-import Welcome from "./components/Welcome";
-import Events from "./components/Events";
-import Review from "./components/Review";
-import TicketBooking from "./components/TicketBooking";
-import Blogs from "./components/Blogs";
-import Instagram from "./components/Instagram";
-import Footer from "./components/Footer";
-import AboutUs from "./components/AboutUs";
-import Services from "./components/Services";
-import ServiceDetails from "./components/ServiceDetails";
-import TeamDetails from "./components/TeamDetails";
-import Portfolio from "./components/Portfolio";
-import BlogClassic from "./components/BlogClassic";
-import BlogDetails from "./components/BlogDetails";
-import ContactUs from "./components/ContactUs";
-import Shop from "./components/Shop";
-import Search from "./components/Search";
-import Flowbite from "./components/Flowbite";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
 import ScrollToTop from "./components/ScrollToTop";
-import EventsDetails from "./components/EventsDetails";
-import AllEvents from "./components/AllEvents";
+import Footer from "./components/Footer";
+import LoadingPage from "./components/LoadingPage";
+
+// Lazy load components
+const Navigation = lazy(() => import("./components/Navigation"));
+const Home = lazy(() => import("./components/Home"));
+const Welcome = lazy(() => import("./components/Welcome"));
+const Events = lazy(() => import("./components/Events"));
+const Review = lazy(() => import("./components/Review"));
+const TicketBooking = lazy(() => import("./components/TicketBooking"));
+const Blogs = lazy(() => import("./components/Blogs"));
+const Instagram = lazy(() => import("./components/Instagram"));
+const AboutUs = lazy(() => import("./components/AboutUs"));
+const Services = lazy(() => import("./components/Services"));
+const ServiceDetails = lazy(() => import("./components/ServiceDetails"));
+const TeamDetails = lazy(() => import("./components/TeamDetails"));
+const Portfolio = lazy(() => import("./components/Portfolio"));
+const BlogClassic = lazy(() => import("./components/BlogClassic"));
+const BlogDetails = lazy(() => import("./components/BlogDetails"));
+const ContactUs = lazy(() => import("./components/ContactUs"));
+const Shop = lazy(() => import("./components/Shop"));
+const Search = lazy(() => import("./components/Search"));
+const Flowbite = lazy(() => import("./components/Flowbite"));
+const Cart = lazy(() => import("./components/Cart"));
+const Checkout = lazy(() => import("./components/Checkout"));
+const EventsDetails = lazy(() => import("./components/EventsDetails"));
+const AllEvents = lazy(() => import("./components/AllEvents"));
 
 const Layout = () => (
   <>
     <ScrollToTop />
-    <Outlet />
+    <Suspense
+      fallback={
+        <div>
+          <LoadingPage />
+        </div>
+      }
+    >
+      <Outlet />
+    </Suspense>
     <Footer />
   </>
 );
@@ -37,7 +48,6 @@ const Layout = () => (
 const router = createBrowserRouter([
   {
     path: "/",
-
     element: <Layout />,
     children: [
       { path: "", element: <Home /> },
@@ -56,15 +66,8 @@ const router = createBrowserRouter([
       { path: "/eventsDetails/:id", element: <EventsDetails /> },
       { path: "/blogClassic", element: <BlogClassic /> },
       { path: "/contactUs", element: <ContactUs /> },
-
-      {
-        path: "/shop",
-        element: <Shop />,
-      },
-      {
-        path: "/search",
-        element: <Search />,
-      },
+      { path: "/shop", element: <Shop /> },
+      { path: "/search", element: <Search /> },
       { path: "/flowbite", element: <Flowbite /> },
       { path: "/cart", element: <Cart /> },
       { path: "/checkout", element: <Checkout /> },
@@ -82,219 +85,3 @@ function App() {
 }
 
 export default App;
-
-// import React from "react";
-// import { createBrowserRouter, RouterProvider } from "react-router-dom";
-// import Navigation from "./components/Navigation";
-// import Home from "./components/Home";
-// import Welcome from "./components/Welcome";
-// import Events from "./components/Events";
-// import Review from "./components/Review";
-// import TicketBooking from "./components/TicketBooking";
-// import Blogs from "./components/Blogs";
-// import Instagram from "./components/Instagram";
-// import Footer from "./components/Footer";
-// import AboutUs from "./components/AboutUs";
-// import Services from "./components/Services";
-// import ServiceDetails from "./components/ServiceDetails";
-// import TeamDetails from "./components/TeamDetails";
-// import Portfolio from "./components/Portfolio";
-// import BlogClassic from "./components/BlogClassic";
-// import BlogDetails from "./components/BlogDetails";
-// import ContactUs from "./components/ContactUs";
-// import Shop from "./components/Shop";
-// import Search from "./components/Search";
-// import Flowbite from "./components/Flowbite";
-// import Cart from "./components/Cart";
-// import Checkout from "./components/Checkout";
-// import ScrollToTop from "./components/ScrollToTop";
-
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     element: <Home />,
-//   },
-//   {
-//     path: "/welcome",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Welcome />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/events",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Events />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/review",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Review />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/ticket-booking",
-//     element: (
-//       <>
-//         <Navigation />
-//         <TicketBooking />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/blogs",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Blogs />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/instagram",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Instagram />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/aboutUs",
-//     element: (
-//       <>
-//         <Navigation />
-//         <AboutUs />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/services",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Services />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/serviceDetails",
-//     element: (
-//       <>
-//         <Navigation />
-//         <ServiceDetails />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/teamDetails",
-//     element: (
-//       <>
-//         <Navigation />
-//         <TeamDetails />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/portfolio",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Portfolio />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/blogClassic",
-//     element: (
-//       <>
-//         <Navigation />
-//         <BlogClassic />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/blogs_details/:id",
-//     element: (
-//       <>
-//         <ScrollToTop />
-//         <Navigation />
-//         <BlogDetails />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/contactUs",
-//     element: (
-//       <>
-//         <Navigation />
-//         <ContactUs />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/shop",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Shop />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/search",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Search />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/flowbite",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Flowbite />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/cart",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Cart />
-//       </>
-//     ),
-//   },
-//   {
-//     path: "/cart/checkout",
-//     element: (
-//       <>
-//         <Navigation />
-//         <Checkout />
-//       </>
-//     ),
-//   },
-// ]);
-
-// function App() {
-//   return (
-//     <div className="">
-//       <RouterProvider router={router} />
-//       <Footer />
-//     </div>
-//   );
-// }
-
-// export default App;
