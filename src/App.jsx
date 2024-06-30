@@ -28,7 +28,8 @@ const Cart = lazy(() => import("./components/Cart"));
 const Checkout = lazy(() => import("./components/Checkout"));
 const EventsDetails = lazy(() => import("./components/EventsDetails"));
 const AllEvents = lazy(() => import("./components/AllEvents"));
-
+import CustomerSupport from "./components/CustomerSupport";
+import ScrollToTopButton from "./components/ScrollToTopButton";
 const Layout = () => (
   <>
     <ScrollToTop />
@@ -40,7 +41,9 @@ const Layout = () => (
       }
     >
       <Outlet />
-    </Suspense>
+    </Suspense>{" "}
+    <CustomerSupport />
+    <ScrollToTopButton />
     <Footer />
   </>
 );
