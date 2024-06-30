@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { compareDates, groupByMonth } from "./utils";
 import { events } from "../Data";
-import { AddToCalendarButton } from "add-to-calendar-button-react";
 import { parse, format, isAfter, isBefore } from "date-fns";
 import { IoChevronBack } from "react-icons/io5";
 import { IoIosArrowForward } from "react-icons/io";
@@ -32,6 +31,7 @@ const AllEvents = () => {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false);
 
   const [status, setStatus] = useState("upcoming");
+  const [viewMode, setViewMode] = useState(false);
 
   const handleIconClick = (event) => {
     setIsClicked(!isClicked);
@@ -151,7 +151,10 @@ const AllEvents = () => {
             <button className="mx-[.5vw] py-[.8vw] border-b-[.2vw] border-transparent focus:border-black focus:border-b-[.2vw]">
               List{" "}
             </button>{" "}
-            <button className="mx-[.5vw] py-[.8vw] border-b-[.2vw] border-transparent focus:border-black focus:border-b-[.2vw]">
+            <button
+              onClick={() => setViewMode(!viewMode)}
+              className="mx-[.5vw] py-[.8vw] border-b-[.2vw] border-transparent focus:border-black focus:border-b-[.2vw]"
+            >
               Month{" "}
             </button>{" "}
             <button className="mx-[.5vw] py-[.8vw] border-b-[.2vw] border-transparent focus:border-black focus:border-b-[.2vw]">
@@ -187,7 +190,6 @@ const AllEvents = () => {
               onClick={handleIconClick}
               className="text-black text-[1.2vw] ml-3 cursor-pointer flex items-center"
             >
-              {" "}
               {selectedDate ? (
                 selectedDate.toDateString() === today.toDateString() ? (
                   <>
@@ -234,7 +236,6 @@ const AllEvents = () => {
               onClick={handleIconClick}
               className="text-gray-800 hover:text-gray-500   text-[4vw]   sm:text-[3vw]  md:text-[3vw] cursor-pointer flex items-center"
             >
-              {" "}
               {selectedDate ? (
                 selectedDate.toDateString() === today.toDateString() ? (
                   <>
@@ -268,6 +269,7 @@ const AllEvents = () => {
                 <DatePicker
                   selected={selectedDate}
                   onChange={handleDateChange}
+                  showMonthYearPicker
                   inline
                 />
               </div>
@@ -447,7 +449,7 @@ const AllEvents = () => {
             </div>
           )}{" "}
         </div>{" "}
-        {/ * mobile and tab view * /}{" "}
+        {/* mobile and tab view */}{" "}
         <div className="w-full lg:hidden mt-[4vw]">
           {" "}
           {active === "upcoming" && (

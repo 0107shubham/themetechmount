@@ -1,0 +1,18 @@
+/* AddToCalendarButton.css */
+
+.customAddToCalendar .react-add-to-calendar__button {
+  background-color: #4caf50;
+  /* Custom background color */
+  color: white;
+  /* Custom text color */
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.customAddToCalendar .react-add-to-calendar__button:hover {
+  background-color: #45a049;
+  /* Custom hover background color */
+}
