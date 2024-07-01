@@ -1,18 +1,39 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { events } from "../Data";
 import { useParams } from "react-router-dom";
 import { Link, useNavigate } from "react-router-dom";
+import { format } from "date-fns";
 import Navigation from "./Navigation";
 
 const EventsDetails = () => {
+  const [message, setMessage] = useState("");
+
   const { id } = useParams();
   const navigate = useNavigate();
   console.log(id);
   const data = events.find((items) => items.id.toString() === id);
-
+  console.log("evanta details", data);
   const handleAllEvent = () => {
     navigate("/allEvents");
   };
+
+  useEffect(() => {
+    const compareDates = () => {
+      const inputDate = new Date(data.date);
+      const today = new Date();
+      // Set the time part to 00:00:00 for accurate comparison
+      inputDate.setHours(0, 0, 0, 0);
+      today.setHours(0, 0, 0, 0);
+
+      if (inputDate < today) {
+        setMessage("This event has passed.");
+      } else {
+        setMessage("Upcoming Event");
+      }
+    };
+
+    compareDates();
+  }, [data]);
 
   return (
     <div className="w-full">
@@ -22,10 +43,18 @@ const EventsDetails = () => {
       <div className="w-full flex justify-center items-center h-[30vw] md:h-[20vw] bg-cover bg-[url('https://res.cloudinary.com/drvjsegeb/image/upload/v1717399420/slider_h7kdml.jpg')]">
         <p className="uppercase text-[5vw] text-white">Events</p>
       </div>
-      <div className=" w-full px-[3vw] md:px-[20vw]">
-        <button onClick={handleAllEvent}>
-          <p>All Events</p>
-        </button>
+      <div className=" w-full  px-[3vw] md:px-[20vw] ">
+        <div className="w-full flex justify-center items-center border bg-slate-200 py-2 my-4 mx-auto ">
+          <p className="text-[2vw]">{message}</p>
+        </div>
+        <div className="w-full  flex justify-between items-center">
+          <button className="bg-black border p-3" onClick={handleAllEvent}>
+            <p className="text-white text-[2vw]">All Events</p>
+          </button>
+          <p className="text-[2vw]">
+            {format(data.date, "MMMM dd")} @ 10:00 am - 12:00 pm
+          </p>
+        </div>
         <div>
           <img
             className="w-full aspect-video my-[2vw]"
